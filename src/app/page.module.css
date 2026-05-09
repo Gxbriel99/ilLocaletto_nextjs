@@ -9,6 +9,14 @@
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
+  --navbarBgColor: #121212;
+  --textColor: #FEFEFE;
+  --textColorSecondary: #5D4037;
+  --cta1Color: #801917;
+  --cta2Color: #EFE9D1;
+  --detailsColor: #BE9859;
+  
+
   display: flex;
   min-height: 100vh;
   align-items: center;
