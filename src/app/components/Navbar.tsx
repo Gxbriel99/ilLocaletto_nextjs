@@ -1,8 +1,8 @@
   import { info } from "../data/info";
   import { Phone } from "lucide-react";
+  
 
   export default function Navbar() {
-
     return (
       <nav>
         <div className="drawer">
@@ -35,12 +35,12 @@
                     </svg>
                   </label>
                 </div>
-                {/* Logo centrato assoluto sull’asse X */}
+                {/* Logo nascosto su mobile */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
                   <img 
                     src="/logo.webp" 
                     alt="Logo Il Localetto" 
-                    className="h-12 w-auto"
+                    className="h-12 w-auto hidden" // hidden su mobile
                   />
                 </div>
                 {/* Spacer per allineamento */}
@@ -144,7 +144,6 @@
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#BE9859] hover:bg-[#801917] text-[#801917] hover:text-white font-semibold rounded transition-colors text-base w-full border border-[#BE9859]"
                 >
-                  
                   Whatsapp
                 </a>
               </div>
@@ -156,7 +155,6 @@
                   rel="noopener noreferrer"
                   className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
                 >
-                  
                 </a>
                 <a
                   href={info.facebook}
@@ -164,7 +162,6 @@
                   rel="noopener noreferrer"
                   className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
                 >
-                 
                 </a>
                 <a
                   href={`https://wa.me/${info.whatsappPhone}`}
@@ -172,7 +169,6 @@
                   rel="noopener noreferrer"
                   className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
                 >
-                 
                 </a>
               </div>
             </div>
