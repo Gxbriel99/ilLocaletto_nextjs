@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.fullBlur {
+   z-index: 1;
+    filter: blur(40px) !important;
+    z-index: 1;
+    pointer-events: none;
+}
