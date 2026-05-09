@@ -6,13 +6,14 @@ export default function Header() {
     <header
       className="w-full h-screen"
       style={{
-        backgroundImage: `url('/header_bg.webp')`,
+        backgroundImage:
+          "linear-gradient(to right, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.85) 33%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0) 58%), url('/header_bg.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundBlendMode: "multiply"
       }}
+ 
     >
       
       <div className="md:w-1/2 h-full flex flex-col items-center justify-center">

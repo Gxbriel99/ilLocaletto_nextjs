@@ -159,14 +159,14 @@ export default function Navbar() {
                 href={`https://wa.me/${info.whatsappPhone}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-[#BE9859] hover:bg-[#801917] text-[#801917] hover:text-white font-semibold border border-[#BE9859] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-[#BE9859] hover:bg-[#801917] text-[#801917] hover:text-white font-semibold border border-[#BE9859] transition-colors text-base"
               >
                 <MessageCircle className="w-5 h-5" />
                 Whatsapp
               </a>
             </div>
-            {/* Social icons mobile */}
-            <div className="flex gap-5 mt-auto mb-1 pt-10 justify-center items-center border-t border-[#BE9859]/30">
+            {/* Social */}
+            <div className="flex gap-6 mt-auto mb-3 pt-10 justify-center items-center border-t border-[#BE9859]/30">
               <a
                 href={info.instagram}
                 target="_blank"
@@ -174,7 +174,7 @@ export default function Navbar() {
                 aria-label="Instagram"
                 className="text-[#801917] hover:text-[#BE9859] transition-colors"
               >
-                {/* Instagram icon could go here */}
+                {/* Instagram icon */}
               </a>
               <a
                 href={info.facebook}
@@ -183,7 +183,7 @@ export default function Navbar() {
                 aria-label="Facebook"
                 className="text-[#801917] hover:text-[#BE9859] transition-colors"
               >
-                {/* Facebook icon could go here */}
+                {/* Facebook icon */}
               </a>
               <a
                 href={`https://wa.me/${info.whatsappPhone}`}
@@ -195,13 +195,13 @@ export default function Navbar() {
                 <MessageCircle className="w-7 h-7" />
               </a>
             </div>
+            <style jsx>{`
+              @keyframes slideinDrawerStrong {
+                from { transform: translateX(-100%); opacity:0; }
+                to { transform: translateX(0); opacity:1; }
+              }
+            `}</style>
           </aside>
-          <style jsx>{`
-            @keyframes slideinDrawer {
-              from { transform: translateX(-100%); opacity:0; }
-              to { transform: translateX(0); opacity:1; }
-            }
-          `}</style>
         </div>
       )}
     </nav>
