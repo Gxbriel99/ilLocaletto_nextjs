@@ -1,4 +1,8 @@
+  import { info } from "../data/info";
+  import { Phone } from "lucide-react";
+
   export default function Navbar() {
+
     return (
       <nav>
         <div className="drawer">
@@ -56,59 +60,120 @@
                 <div className="flex-1 flex justify-center">
                   <ul className="flex flex-row gap-8 text-[1.1rem] uppercase items-center">
                     <li className="hover:text-[#BE9859]">
-                      <a href="#" className="text-lg font-semibold">Home</a>
+                      <a href="/" className="text-lg font-semibold">Home</a>
                     </li>
                     <li className="hover:text-[#BE9859]">
-                      <a href="#" className="text-lg font-semibold">Il nostro Menu</a>
+                      <a href="/menu" className="text-lg font-semibold">Il nostro Menu</a>
                     </li>
                     <li className="hover:text-[#BE9859]">
-                      <a href="#" className="text-lg font-semibold">Galleria</a>
+                      <a href="/galleria" className="text-lg font-semibold">Galleria</a>
                     </li>
                   </ul>
                 </div>
                 {/* Button sulla end */}
                 <div className="flex-none ml-4">
-                  <button className="btn btn-primary text-white bg-[#801917] border-none hover:bg-[#BE9859] font-semibold uppercase">
+                  <a
+                    href={`tel:+39${info.phone}`}
+                    className="btn btn-primary text-white bg-[#801917] border-none hover:bg-[#BE9859] font-semibold uppercase flex items-center gap-1"
+                  >
+                    <Phone className="w-5 h-5 inline" />
                     Prenota ora
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="drawer-side">
+          {/* Drawer/Offcanvas con posizione assoluta e z-index elevato */}
+          <div
+            className="drawer-side"
+            style={{ position: 'fixed', inset: 0, zIndex: 9999 }} // sempre sopra a tutto!
+          >
             <label
               htmlFor="my-drawer-2"
               aria-label="close sidebar"
               className="drawer-overlay"
+              style={{ position: 'fixed', inset: 0, zIndex: 9998 }}
             ></label>
-            
-            <div className="relative bg-base-200 min-h-full w-80 p-4">
+            <div
+              className="relative bg-base-200 min-h-full w-80 p-4 flex flex-col"
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                height: '100vh',
+                zIndex: 9999,
+                boxShadow: '2px 0 12px rgba(0,0,0,0.17)',
+                maxWidth: '20rem',
+              }}
+            >
               {/* Pulsante X per chiudere */}
               <label
                 htmlFor="my-drawer-2"
                 aria-label="close sidebar"
                 className="absolute top-2 right-4 cursor-pointer btn btn-ghost btn-sm text-2xl"
-                style={{ minHeight: 'unset', height: 'unset', width: 'unset', padding: 0 }}
+                style={{ minHeight: 'unset', height: 'unset', width: 'unset', padding: 0, zIndex: 10000 }}
               >
                 ×
               </label>
               <ul className="menu mt-8 text-lg">
                 <li>
-                  <a href="#" className="font-semibold uppercase">Home</a>
+                  <a href="/" className="font-semibold uppercase">Home</a>
                 </li>
                 <li>
-                  <a href="#" className="font-semibold uppercase">Il nostro Menu</a>
+                  <a href="/menu" className="font-semibold uppercase">Il nostro Menu</a>
                 </li>
                 <li>
-                  <a href="#" className="font-semibold uppercase">Galleria</a>
+                  <a href="/galleria" className="font-semibold uppercase">Galleria</a>
                 </li>
               </ul>
               {/* CTA button solo mobile / offcanvas */}
-              <div className="mt-6 md:hidden">
-                <button className="btn btn-primary w-full text-white bg-[#801917] border-none hover:bg-[#BE9859] font-semibold uppercase">
+              <div className="mt-6 md:hidden grid gap-3">
+                {/* PRIMARIO: Prenota ora */}
+                <a
+                  href={`tel:+39${info.phone}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#801917] hover:bg-[#BE9859] text-white font-semibold rounded transition-colors text-base w-full"
+                >
+                  <Phone className="h-5 w-5" />
                   Prenota ora
-                </button>
+                </a>
+                {/* Secondario: whatsapp */}
+                <a
+                  href={`https://wa.me/${info.whatsappPhone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#BE9859] hover:bg-[#801917] text-[#801917] hover:text-white font-semibold rounded transition-colors text-base w-full border border-[#BE9859]"
+                >
+                  
+                  Whatsapp
+                </a>
+              </div>
+              {/* SOCIAL ICONS */}
+              <div className="flex mt-10 gap-5 justify-center items-center">
+                <a
+                  href={info.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
+                >
+                  
+                </a>
+                <a
+                  href={info.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
+                >
+                 
+                </a>
+                <a
+                  href={`https://wa.me/${info.whatsappPhone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors text-[#801917] hover:text-[#BE9859] text-2xl p-1"
+                >
+                 
+                </a>
               </div>
             </div>
           </div>
