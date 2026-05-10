@@ -54,7 +54,6 @@ export default function Header() {
             </p>
           </div>
      
-     
           {/* CTA */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:pl-16 lg:pl-0">
             <a
@@ -68,7 +67,7 @@ export default function Header() {
             </a>
             <a
               href="#asporto"
-              className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#EFE9D1] hover:bg-[#BE9859]
+              className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#BE9859] hover:bg-[#EFE9D1]
                 w-full md:w-auto md:min-w-[240px] md:max-w-[240px] md:px-6 md:py-2.5 md:text-lg
                 lg:min-w-[260px] lg:max-w-[260px] lg:px-7 lg:py-3 lg:text-xl"
             >
