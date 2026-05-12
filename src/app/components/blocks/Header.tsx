@@ -4,9 +4,13 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="relative h-screen w-full overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/header_bg.webp')" }}
+      <Image
+        src="/header_bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 select-none object-cover object-center"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.58)_40%,rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.08)_100%)] md:bg-[linear-gradient(to_right,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.85)_33%,rgba(0,0,0,0.5)_48%,rgba(0,0,0,0)_58%)]" />
       
