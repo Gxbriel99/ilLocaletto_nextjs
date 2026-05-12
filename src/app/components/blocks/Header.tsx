@@ -3,20 +3,14 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header
-      className="w-full h-screen"
-      style={{
-        backgroundImage:
-          "linear-gradient(to right, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.85) 33%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0) 58%), url('/header_bg.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "multiply"
-      }}
- 
-    >
+    <header className="relative h-screen w-full overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/header_bg.webp')" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.58)_40%,rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.08)_100%)] md:bg-[linear-gradient(to_right,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.85)_33%,rgba(0,0,0,0.5)_48%,rgba(0,0,0,0)_58%)]" />
       
-      <div className="md:w-1/2 h-full flex flex-col items-center justify-center">
+      <div className="relative flex h-full flex-col items-center justify-center md:w-1/2">
         <div className="flex flex-col items-center justify-center text-white h-full py-12 md:ml-35 lg:ml-0">
           
           {/* Logo */}
