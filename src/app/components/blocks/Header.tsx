@@ -41,9 +41,9 @@ export default function Header() {
           </h2>
 
           {/* Testo */}
-          <div className="flex flex-col items-center justify-center mb-6">
+          <div className="mb-6 flex flex-col items-center justify-center px-4">
             <p
-              className="text-xl md:text-2xl lg:text-2xl text-center max-w-2xl drop-shadow"
+              className="max-w-[36ch] text-center text-base leading-relaxed drop-shadow sm:max-w-2xl sm:text-lg md:text-xl lg:text-2xl"
               style={{
                 textShadow: "1px 1px 4px rgba(0,0,0,0.38), 0px 1px 1px rgba(0,0,0,0.16)",
               }}
