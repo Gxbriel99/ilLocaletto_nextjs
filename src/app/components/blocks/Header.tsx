@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="relative z-10 h-screen w-full overflow-hidden">
+    <header className="relative z-[1] h-screen w-full overflow-hidden">
       <Image
         src="/header_bg.webp"
         alt=""

@@ -1,123 +1,102 @@
 import Image from "next/image";
-import { Leaf, UtensilsCrossed, Armchair } from "lucide-react";
+import { Leaf, UtensilsCrossed, Armchair, type LucideIcon } from "lucide-react";
+
+type Feature = {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+};
+
+const features: Feature[] = [
+  {
+    icon: Leaf,
+    title: "Materie prime",
+    text: "Ingredienti freschi e di stagione per sapori genuini in ogni assaggio.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Preparazione",
+    text: "Impasti a lunga lievitazione e pizza alla pala fatta con cura in cucina.",
+  },
+  {
+    icon: Armchair,
+    title: "Accoglienza",
+    text: "Un ambiente semplice e confortevole, ideale per una pausa in compagnia.",
+  },
+];
 
 export default function About() {
   return (
     <section
-      id="about-bg"
-      className="relative h-screen w-full overflow-visible"
+      id="chi-siamo"
+      className="relative isolate z-[900] h-screen w-full overflow-visible"
     >
-    
-    <div className="pointer-events-none absolute inset-x-0 -top-15 z-[10] h-[calc(100%+1rem)] w-full overflow-hidden">
-      <Image
-        src="/about-bg.webp"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-[center_45%]"
-        aria-hidden
-        priority
-      />
-    </div>
-     {/*
-     <div
-        className="absolute inset-0 z-10 grid h-full min-h-0 grid-cols-1 grid-rows-[auto_minmax(0,1fr)_minmax(34vh,auto)] px-3 py-3 sm:grid-rows-[auto_minmax(0,1fr)_minmax(36vh,auto)] sm:px-4 sm:py-4 md:grid-cols-2 md:grid-rows-[1fr_1fr] md:gap-x-8 md:px-10 md:py-5 lg:gap-x-14 lg:px-16 lg:py-6"
-      >
-       
-        <div className="flex min-h-0 flex-col items-center justify-start px-0 py-4 sm:px-1 sm:py-5 md:col-start-1 md:row-span-2 md:row-start-1 md:h-full md:justify-center md:px-2 md:py-6">
-          <div className="flex w-full max-w-xl flex-col items-start gap-3 sm:gap-4 md:gap-5">
-            <h2 className="w-full text-start text-3xl font-bold text-[#801917] sm:text-4xl md:text-5xl">
+      <div className="pointer-events-none absolute inset-x-0 -top-15 z-[1] h-[calc(100%+4rem)] w-full overflow-hidden">
+        <Image
+          src="/about-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_45%]"
+          aria-hidden
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-[40vh] top-[8vh] sm:px-6 sm:pb-[43vh] sm:top-[9vh] md:pb-[46vh] md:top-[10vh] lg:top-[15vh] lg:px-8 lg:pb-0">
+        <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:grid lg:grid-cols-2 lg:gap-8">
+          <header className="mx-auto w-full max-w-xl space-y-3 text-center sm:space-y-4 lg:mx-0 lg:text-start lg:space-y-5">
+            <h2 className="text-2xl font-bold text-[#801917] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-3xl lg:text-5xl">
               Chi siamo
             </h2>
-            <h3 className="w-full text-start text-2xl font-bold whitespace-normal text-[#BE9859] sm:text-3xl md:text-4xl md:whitespace-nowrap">
+            <h3 className="text-xl font-bold text-[#BE9859] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-2xl lg:text-4xl lg:whitespace-nowrap">
               Il gusto autentico a Sutri
             </h3>
-            <p className="text-shadow max-w-prose w-full text-start text-base leading-relaxed text-[#5D4037] sm:text-lg">
-              Al Localetto troverai passione per le cose buone e locali: selezioniamo solo ingredienti di qualità e prepariamo le nostre pizze alla pala con cura artigianale, in un ambiente semplice e accogliente. <br />
-              Prenota il tuo tavolo e vieni a scoprire il gusto autentico a Sutri.
+            <p className="mx-auto max-w-prose text-sm leading-relaxed text-[#5D4037] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base lg:mx-0 lg:text-lg">
+              Da noi la qualità è al primo posto: ingredienti selezionati, impasti a lunga
+              lievitazione e pizza alla pala preparata con cura, in un ambiente semplice e
+              accogliente.
+              <br />
+              Prenota il tuo tavolo e vieni a scoprire il gusto autentico di Il Localetto a
+              Sutri.
             </p>
-       
-
             <a
               href="#prenota"
-              className="mt-1 inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-2.5 text-center text-base font-bold text-[#5D4037] transition-colors duration-150 shadow hover:bg-[#5D4037] hover:text-white active:bg-white active:text-[#5D4037] focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg"
+              className="mx-auto inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-2.5 text-base font-bold text-[#5D4037] shadow transition-colors hover:bg-[#5D4037] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg lg:mx-0"
             >
               Scopri di più
             </a>
-          </div>
-        </div>
+          </header>
 
-        
-        <div className="flex min-h-0 flex-col items-stretch justify-start px-3 pb-4 pt-1 sm:px-4 sm:pb-5 sm:pt-2 md:col-start-2 md:row-start-2 md:px-0 md:pb-8 md:pt-5">
-          <ul className="flex w-full max-w-xl list-none flex-col gap-6 sm:gap-8 md:mx-auto md:gap-9 lg:gap-10">
-            <li>
-              <div className="flex gap-3 text-[#5D4037] sm:gap-4 md:gap-6">
-                <div className="flex shrink-0 items-start pt-0.5 sm:pt-1">
-                  <Leaf className="size-9 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
-                </div>
-                <div className="flex min-w-0 flex-col gap-1 sm:gap-2">
-                  <span className="text-lg font-bold leading-tight sm:text-xl md:text-2xl">
-                    Materie prime
-                  </span>
-                  <p className="text-base leading-relaxed md:text-lg">
-                    Selezioniamo ingredienti freschi e di stagione per offrirti
-                    sapori genuini in ogni assaggio.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="flex gap-3 text-[#5D4037] sm:gap-4 md:gap-6">
-                <div className="flex shrink-0 items-start pt-0.5 sm:pt-1">
-                  <UtensilsCrossed
-                    className="size-9 sm:size-10 md:size-12"
-                    strokeWidth={1.5}
-                    aria-hidden
-                  />
-                </div>
-                <div className="flex min-w-0 flex-col gap-1 sm:gap-2">
-                  <span className="text-lg font-bold leading-tight sm:text-xl md:text-2xl">
-                    Preparazione
-                  </span>
-                  <p className="text-base leading-relaxed md:text-lg">
-                    Impasti a lunga lievitazione e attenzione in cucina per una
-                    pizza alla pala come piace a noi.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="flex gap-3 text-[#5D4037] sm:gap-4 md:gap-6">
-                <div className="flex shrink-0 items-start pt-0.5 sm:pt-1">
-                  <Armchair className="size-9 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
-                </div>
-                <div className="flex min-w-0 flex-col gap-1 sm:gap-2">
-                  <span className="text-lg font-bold leading-tight sm:text-xl md:text-2xl">
-                    Accoglienza
-                  </span>
-                  <p className="text-base leading-relaxed md:text-lg">
-                    Un ambiente semplice e confortevole, ideale per una pausa
-                    gustosa in compagnia.
-                  </p>
-                </div>
-              </div>
-            </li>
+          <ul className="list-none w-full max-w-md space-y-3 text-left text-[#5D4037] sm:max-w-lg sm:space-y-3.5 md:max-w-xl md:space-y-4 lg:max-w-lg lg:justify-self-end">
+            {features.map(({ icon: Icon, title, text }) => (
+              <li key={title}>
+                <article className="flex items-start gap-3 sm:gap-3.5 md:gap-4">
+                  <Icon className="mt-0.5 size-7 shrink-0 sm:size-8 md:size-8 lg:size-10" strokeWidth={1.5} aria-hidden />
+                  <div className="min-w-0 space-y-0.5 sm:space-y-1">
+                    <h3 className="text-sm font-bold text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base md:text-lg lg:text-xl">
+                      {title}
+                    </h3>
+                    <p className="text-xs leading-snug text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-sm md:text-base lg:text-lg">
+                      {text}
+                    </p>
+                  </div>
+                </article>
+              </li>
+            ))}
           </ul>
         </div>
+      </div>
 
-       
-        <div className="flex min-h-0 w-full flex-col justify-end md:col-start-2 md:row-start-1 md:px-0 md:pb-1 md:pt-6 lg:pt-8">
-          <div className="relative mx-auto h-[34vh] min-h-[30vh] w-full sm:h-[36vh] sm:min-h-[32vh] md:h-[38vh] md:max-h-[44vh]">
-            <Image
-              src="/paesaggio.webp"
-              alt="Paesaggio intorno a Sutri"
-              fill
-              sizes="(max-width: 767px) 100vw, 50vw"
-              className="object-contain object-center"
-            />
-          </div>
-        </div>
-      </div> */}
+      <div className="absolute inset-x-0 bottom-[6vh] z-10 h-[34vh] sm:bottom-[7vh] sm:h-[36vh] md:bottom-[8vh] md:h-[38vh] lg:bottom-0 lg:h-[58vh]">
+        <Image
+          src="/paesaggio.webp"
+          alt="Paesaggio intorno a Sutri"
+          fill
+          sizes="100vw"
+          className="object-contain object-center lg:object-bottom"
+        />
+      </div>
     </section>
   );
 }
