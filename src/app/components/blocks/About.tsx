@@ -4,24 +4,26 @@ import { Leaf, UtensilsCrossed, Armchair } from "lucide-react";
 export default function About() {
   return (
     <section
-      id="chi-siamo"
-      className="relative isolate z-[900] min-h-screen max-md:min-h-[108dvh] w-full overflow-visible bg-white md:h-screen md:min-h-0"
+      id="about-bg"
+      className="relative h-screen w-full overflow-visible"
     >
-      <div className="pointer-events-none absolute inset-0 z-[1] min-h-full w-full overflow-hidden">
-        <Image
-          src="/test.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          className="pointer-events-none object-cover object-[center_68%] sm:object-[center_62%] md:object-[center_55%] lg:object-center"
-          aria-hidden
-        />
-      </div>
-
-      <div
+    
+    <div className="pointer-events-none absolute inset-x-0 -top-15 z-[10] h-[calc(100%+1rem)] w-full overflow-hidden">
+      <Image
+        src="/about-bg.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-[center_45%]"
+        aria-hidden
+        priority
+      />
+    </div>
+     {/*
+     <div
         className="absolute inset-0 z-10 grid h-full min-h-0 grid-cols-1 grid-rows-[auto_minmax(0,1fr)_minmax(34vh,auto)] px-3 py-3 sm:grid-rows-[auto_minmax(0,1fr)_minmax(36vh,auto)] sm:px-4 sm:py-4 md:grid-cols-2 md:grid-rows-[1fr_1fr] md:gap-x-8 md:px-10 md:py-5 lg:gap-x-14 lg:px-16 lg:py-6"
       >
-        {/* Testo + CTA */}
+       
         <div className="flex min-h-0 flex-col items-center justify-start px-0 py-4 sm:px-1 sm:py-5 md:col-start-1 md:row-span-2 md:row-start-1 md:h-full md:justify-center md:px-2 md:py-6">
           <div className="flex w-full max-w-xl flex-col items-start gap-3 sm:gap-4 md:gap-5">
             <h2 className="w-full text-start text-3xl font-bold text-[#801917] sm:text-4xl md:text-5xl">
@@ -45,7 +47,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Lista */}
+        
         <div className="flex min-h-0 flex-col items-stretch justify-start px-3 pb-4 pt-1 sm:px-4 sm:pb-5 sm:pt-2 md:col-start-2 md:row-start-2 md:px-0 md:pb-8 md:pt-5">
           <ul className="flex w-full max-w-xl list-none flex-col gap-6 sm:gap-8 md:mx-auto md:gap-9 lg:gap-10">
             <li>
@@ -103,7 +105,7 @@ export default function About() {
           </ul>
         </div>
 
-        {/* Paesaggio: su desktop più in basso (justify-end nella cella) */}
+       
         <div className="flex min-h-0 w-full flex-col justify-end md:col-start-2 md:row-start-1 md:px-0 md:pb-1 md:pt-6 lg:pt-8">
           <div className="relative mx-auto h-[34vh] min-h-[30vh] w-full sm:h-[36vh] sm:min-h-[32vh] md:h-[38vh] md:max-h-[44vh]">
             <Image
@@ -115,7 +117,7 @@ export default function About() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
