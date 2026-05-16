@@ -2,7 +2,7 @@
 
 export default function Testimonials() {
   return (
-    <section>
+    <section >
       <p>Testimonials</p>
     </section>
   );
