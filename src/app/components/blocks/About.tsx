@@ -1,25 +1,24 @@
 import Image from "next/image";
-import { Leaf, UtensilsCrossed, Armchair, type LucideIcon } from "lucide-react";
 
 type Feature = {
-  icon: LucideIcon;
+  icon: string;
   title: string;
   text: string;
 };
 
 const features: Feature[] = [
   {
-    icon: Leaf,
+    icon: "/icon1.png",
     title: "Materie prime",
     text: "Ingredienti freschi e di stagione per sapori genuini in ogni assaggio.",
   },
   {
-    icon: UtensilsCrossed,
+    icon: "/icon2.png",
     title: "Preparazione",
     text: "Impasti a lunga lievitazione e pizza alla pala fatta con cura in cucina.",
   },
   {
-    icon: Armchair,
+    icon: "/icon3.png",
     title: "Accoglienza",
     text: "Un ambiente semplice e confortevole, ideale per una pausa in compagnia.",
   },
@@ -69,10 +68,17 @@ export default function About() {
           </header>
 
           <ul className="list-none w-full max-w-md space-y-3 text-left text-[#5D4037] sm:max-w-lg sm:space-y-3.5 md:max-w-xl md:space-y-4 lg:max-w-lg lg:justify-self-end">
-            {features.map(({ icon: Icon, title, text }) => (
+            {features.map(({ icon, title, text }) => (
               <li key={title}>
-                <article className="flex items-start gap-3 sm:gap-3.5 md:gap-4">
-                  <Icon className="mt-0.5 size-7 shrink-0 sm:size-8 md:size-8 lg:size-10" strokeWidth={1.5} aria-hidden />
+                <article className="flex items-start gap-4 sm:gap-5 md:gap-5">
+                  <Image
+                    src={icon}
+                    alt=""
+                    width={80}
+                    height={80}
+                    className="mt-0.5 size-12 shrink-0 sm:size-14 md:size-16 lg:size-20"
+                    aria-hidden
+                  />
                   <div className="min-w-0 space-y-0.5 sm:space-y-1">
                     <h3 className="text-sm font-bold text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base md:text-lg lg:text-xl">
                       {title}
