@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="relative z-[1] h-screen w-full overflow-hidden">
+    <header className="relative z-[1] w-full overflow-hidden max-md:-mt-16 max-md:h-[100dvh] max-md:pt-16 md:h-screen">
       <Image
         src="/header_bg.webp"
         alt=""
@@ -15,7 +15,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.58)_40%,rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.08)_100%)] md:bg-[linear-gradient(to_right,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.85)_33%,rgba(0,0,0,0.5)_48%,rgba(0,0,0,0)_58%)]" />
       
       <div className="relative flex h-full flex-col items-center justify-center md:w-1/2">
-        <div className="flex flex-col items-center justify-center text-white h-full py-12 md:ml-35 lg:ml-0">
+        <div className="flex h-full flex-col items-center justify-center text-white max-md:py-6 md:ml-35 md:py-12 lg:ml-0">
           
           {/* Logo */}
           <div className="flex items-center justify-center w-full mb-10">
