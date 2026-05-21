@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Clock,
-
   Mail,
   MapPin,
   Phone,
@@ -17,32 +15,26 @@ const NAV_LINKS = [
   { label: "Chi siamo", href: "/#chi-siamo" },
 ] as const;
 
-const ORARI = [
-  { giorni: "Mar – Dom", ore: "18:30 – 23:00" },
-  { giorni: "Lunedì", ore: "Chiuso" },
-] as const;
-
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="relative z-[1000] border-t border-[#BE9859]/25 bg-[#181818] text-[#FEFEFE]">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16 xl:px-12">
+        <div className="flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-12 lg:flex lg:flex-row lg:gap-16 xl:gap-20">
           {/* Brand */}
-          <div className="flex flex-col items-center text-center sm:col-span-2 sm:items-start sm:text-left lg:col-span-4">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left md:col-span-2 lg:col-span-auto lg:w-[30%] lg:max-w-sm lg:shrink-0 xl:w-[28%]">
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.webp"
-                alt="Il Localetto Sutri"
+                alt={info.businessName}
                 width={220}
                 height={80}
                 className="h-20 w-auto object-contain sm:h-24"
               />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/75">
-              Pizza alla pala a lunga lievitazione a Sutri. Ingredienti selezionati,
-              gusto autentico e accoglienza genuina.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/75 lg:mt-6 lg:text-base lg:leading-relaxed">
+              {info.tagline}
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-wide text-[#BE9859]/90 sm:justify-start">
               <a
@@ -70,12 +62,12 @@ export default function Footer() {
           {/* Navigazione */}
           <nav
             aria-label="Collegamenti footer"
-            className="text-center sm:text-left lg:col-span-2 lg:col-start-6"
+            className="text-center sm:text-left lg:w-[15%] lg:min-w-[9rem] lg:shrink-0 xl:min-w-[10rem]"
           >
-            <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859]">
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859] lg:mb-6">
               Navigazione
             </h2>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -89,74 +81,83 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Contatti */}
-          <div className="text-center sm:text-left lg:col-span-3">
-            <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859]">
-              Contatti
-            </h2>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li>
-                <a
-                  href={`tel:+39${info.phone}`}
-                  className="inline-flex items-center justify-center gap-2 transition-colors hover:text-[#BE9859] sm:justify-start"
-                >
-                  <Phone className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
-                  +39 {info.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${info.email}`}
-                  className="inline-flex items-center justify-center gap-2 transition-colors hover:text-[#BE9859] sm:justify-start"
-                >
-                  <Mail className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
-                  {info.email}
-                </a>
-              </li>
-              <li className="inline-flex items-start justify-center gap-2 sm:justify-start">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-[#BE9859]" aria-hidden />
-                <span>{info.address}</span>
-              </li>
-            </ul>
+          {/* Contatti e orari */}
+          <div className="text-center sm:text-left md:col-span-2 lg:col-span-auto lg:min-w-0 lg:flex-1 lg:max-w-2xl">
+            <div className="flex flex-col gap-8 sm:gap-10 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12 xl:gap-x-16">
+              <div>
+                <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859] lg:mb-6">
+                  Contatti
+                </h2>
+                <ul className="space-y-3.5 text-sm text-white/80">
+                <li>
+                  <a
+                    href={`tel:+39${info.phone}`}
+                    className="inline-flex items-center justify-center gap-2.5 transition-colors hover:text-[#BE9859] sm:justify-start"
+                  >
+                    <Phone className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
+                    +39 {info.phone}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${info.email}`}
+                    className="inline-flex items-center justify-center gap-2.5 transition-colors hover:text-[#BE9859] sm:justify-start"
+                  >
+                    <Mail className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
+                    {info.email}
+                  </a>
+                </li>
+                <li className="inline-flex items-start justify-center gap-2.5 sm:justify-start">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#BE9859]" aria-hidden />
+                  <span className="text-left">{info.address}</span>
+                </li>
+              </ul>
+              </div>
+
+              <div className="border-t border-white/10 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12 xl:pl-16">
+                <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859] lg:mb-6">
+                  Orari
+                </h2>
+                <ul className="space-y-2.5 text-sm text-white/80">
+                  {info.weekSchedule.map(({ day, hours }) => (
+                    <li
+                      key={day}
+                      className="flex items-baseline justify-between gap-6 border-b border-white/5 pb-2.5 last:border-0 last:pb-0"
+                    >
+                      <span className="font-medium text-white/90">{day}</span>
+                      <span
+                        className={
+                          hours === "Chiuso"
+                            ? "shrink-0 text-white/50"
+                            : "shrink-0 text-white/70"
+                        }
+                      >
+                        {hours}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
             <a
               href={`tel:+39${info.phone}`}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded bg-[#801917] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow transition-colors hover:bg-[#BE9859] sm:w-auto"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded bg-[#801917] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow transition-colors hover:bg-[#BE9859] sm:w-auto lg:mt-10"
             >
               <UtensilsCrossed className="size-4" aria-hidden />
               Prenota tavolo
             </a>
-          </div>
-
-          {/* Orari */}
-          <div className="text-center sm:text-left lg:col-span-3">
-            <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859]">
-              Orari
-            </h2>
-            <ul className="space-y-3">
-              {ORARI.map(({ giorni, ore }) => (
-                <li
-                  key={giorni}
-                  className="flex flex-col gap-0.5 text-sm sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
-                >
-                  <span className="inline-flex items-center justify-center gap-2 font-medium text-white/90 sm:justify-start">
-                    <Clock className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
-                    {giorni}
-                  </span>
-                  <span className="text-white/70">{ore}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
 
       {/* Barra inferiore */}
       <div className="border-t border-white/10 bg-[#121212]">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-center text-xs text-white/55 sm:flex-row sm:px-6 sm:text-left lg:px-8">
-          <p>
-            © {year} Il Localetto Sutri. Tutti i diritti riservati.
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-center text-xs text-white/55 sm:flex-row sm:gap-6 sm:px-6 sm:text-left lg:gap-8 lg:px-10 lg:py-7 lg:text-sm xl:px-12">
+          <p className="leading-relaxed">
+            © {year} {info.businessName}. Tutti i diritti riservati. · P.IVA {info.piva}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:gap-x-6">
             <Link
               href="/privacy-policy"
               className="transition-colors hover:text-[#BE9859]"
@@ -167,7 +168,7 @@ export default function Footer() {
               ·
             </span>
             <span>
-              Sito web di{" "}
+              Design by{" "}
               <a
                 href={info.designLink}
                 target="_blank"

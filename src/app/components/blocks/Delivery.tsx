@@ -8,7 +8,7 @@ export default function Delivery() {
       className="relative z-[1] -mt-[10vh] h-screen w-full overflow-hidden sm:-mt-[12vh] md:-mt-[14vh]"
     >
       <Image
-        src="/delivery.webp"
+        src="/delivery_bg.webp"
         alt=""
         fill
         sizes="100vw"

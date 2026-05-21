@@ -44,14 +44,14 @@ export default function About() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-[40vh] top-[8vh] sm:px-6 sm:pb-[43vh] sm:top-[9vh] md:pb-[46vh] md:top-[10vh] lg:top-[15vh] lg:px-8 lg:pb-0">
         <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:grid lg:grid-cols-2 lg:gap-8">
-          <header className="mx-auto w-full max-w-xl space-y-3 text-center sm:space-y-4 lg:mx-0 lg:text-start lg:space-y-5">
-            <h2 className="text-2xl font-bold text-[#801917] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-3xl lg:text-5xl">
+          <header className="mx-auto w-full max-w-xl space-y-4 text-center sm:space-y-4 lg:mx-0 lg:text-start lg:space-y-5">
+            <h2 className="text-3xl font-bold text-[#801917] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-3xl lg:text-5xl">
               Chi siamo
             </h2>
-            <h3 className="text-xl font-bold text-[#BE9859] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-2xl lg:text-4xl lg:whitespace-nowrap">
+            <h3 className="text-2xl font-bold text-[#BE9859] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-2xl lg:text-4xl lg:whitespace-nowrap">
               Il gusto autentico a Sutri
             </h3>
-            <p className="mx-auto max-w-prose text-sm leading-relaxed text-[#5D4037] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base lg:mx-0 lg:text-lg">
+            <p className="mx-auto max-w-prose text-base leading-relaxed text-[#5D4037] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base lg:mx-0 lg:text-lg">
               Da noi la qualità è al primo posto: ingredienti selezionati, impasti a lunga
               lievitazione e pizza alla pala preparata con cura, in un ambiente semplice e
               accogliente.
@@ -61,7 +61,7 @@ export default function About() {
             </p>
             <a
               href="#prenota"
-              className="mx-auto inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-2.5 text-base font-bold text-[#5D4037] shadow transition-colors hover:bg-[#5D4037] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg lg:mx-0"
+              className="mx-auto inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-3 text-lg font-bold text-[#5D4037] shadow transition-colors hover:bg-[#5D4037] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg lg:mx-0"
             >
               Scopri di più
             </a>
@@ -76,14 +76,14 @@ export default function About() {
                     alt=""
                     width={80}
                     height={80}
-                    className="mt-0.5 size-12 shrink-0 sm:size-14 md:size-16 lg:size-20"
+                    className="mt-0.5 size-14 shrink-0 sm:size-14 md:size-16 lg:size-20"
                     aria-hidden
                   />
                   <div className="min-w-0 space-y-0.5 sm:space-y-1">
-                    <h3 className="text-sm font-bold text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base md:text-lg lg:text-xl">
+                    <h3 className="text-base font-bold text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-base md:text-lg lg:text-xl">
                       {title}
                     </h3>
-                    <p className="text-xs leading-snug text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-sm md:text-base lg:text-lg">
+                    <p className="text-sm leading-snug text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-sm md:text-base lg:text-lg">
                       {text}
                     </p>
                   </div>

@@ -1,7 +1,6 @@
-import Faq from "./components/blocks/Faq";
-import Header from "./components/blocks/Header";
 import About from "./components/blocks/About";
 import Delivery from "./components/blocks/Delivery";
+import Header from "./components/blocks/Header";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Header />
       <About />
       <Delivery />
-      <Footer />
      {/* { <Faq /> */}
       {/* <Testimonials /> */}
     </>
