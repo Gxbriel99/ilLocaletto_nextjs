@@ -1,24 +1,27 @@
-type TOptions = {
+export type TOptions = {
     quantity: string;
     price: number;
 }
 
-interface MenuItem {
+export interface MenuItem {
     name: string;
     description?: string;
     options?: TOptions[];
     price?: number;
     image?: string;
+    featured?: boolean;
 }
 
-
+function withImage(items: MenuItem[]): MenuItem[] {
+    return items.map((item) => ({ ...item, image: "#" }));
+}
 
 export const Antipasti: MenuItem[] = [
     {
         name: "Tris di bruschette",
         description: "",
         price: 4.0,
-        image: "/menu/bruschette.jpg",
+        image: "#",
     },
     /*
     {
@@ -38,31 +41,31 @@ export const Antipasti: MenuItem[] = [
         name: "Fiore di zucca fritto *",
         description: "",
         price: 1.8,
-        image: "/menu/fiore.jpg",
+        image: "#",
     },
     {
         name: "Filetto di baccalà fritto *",
         description: "",
         price: 2.3,
-        image: "/menu/baccala.jpg",
+        image: "#",
     },
     {
         name: "Mozzarelline fritte*",
         description: "4 a porzione",
         price: 4.0,
-        image: "/menu/mozzarelline.jpg",
+        image: "#",
     },
     {
         name: "Tagliere di salumi locali",
         description: "",
         price: 12.0,
-        image: "/menu/salumi.jpg",
+        image: "#",
     },
     {
         name: "Tagliere di formaggi locali",
         description: "",
         price: 16.0,
-        image: "/menu/formaggi.jpg",
+        image: "#",
     },
     /*
     {
@@ -82,19 +85,19 @@ export const Antipasti: MenuItem[] = [
         name: "1 Supplì",
         description: "",
         price: 1.5,
-        image: "/menu/suppli.jpg",
+        image: "#",
     },
     {
         name: "1 Crocchetta",
         description: "",
         price: 0.7,
-        image: "/menu/crocchetta.jpg",
+        image: "#",
     },
     {
         name: "1 Oliva ascolana",
         description: "",
         price: 0.7,
-        image: "/menu/oliva.jpg",
+        image: "#",
     },
     /*
     {
@@ -114,13 +117,13 @@ export const Antipasti: MenuItem[] = [
         name: "Coccetto di Focaccia “extra”",
         description: "",
         price: 2.0,
-        image: "/menu/focaccia.jpg",
+        image: "#",
     },
     {
         name: "Patatine fritte*",
         description: "",
         price: 5.0,
-        image: "/menu/patatine.jpg",
+        image: "#",
     },
 ];
 
@@ -147,16 +150,16 @@ export const Antipasti: MenuItem[] = [
     }
 ]; */
 
-export const gustiSemplici: MenuItem[] = [
+export const gustiSemplici: MenuItem[] = withImage([
     { name: "Margherita", description: "mozzarella, pomodoro", price: 6.00 },
     { name: "Funghi bianca", description: "mozzarella, funghi champignon", price: 6.00 },
     { name: "Marinara", description: "pomodoro, aglio, origano, peperoncino", price: 6.00 },
     { name: "Funghi", description: "pomodoro, mozzarella, funghi champignon", price: 6.00 },
     { name: "Patate", description: "mozzarella, patate", price: 6.00 },
-    { name: "Crostino", description: "mozzarella, prosciutto cotto", price: 6.00 }
-];
+    { name: "Crostino", description: "mozzarella, prosciutto cotto", price: 6.00 },
+]);
 
-export const gustiRicchi: MenuItem[] = [
+export const gustiRicchi: MenuItem[] = withImage([
     { name: "Napoli", description: "mozzarella, pomodoro, alici", price: 7.50 },
     { name: "Boscaiola", description: "mozzarella, funghi, salsiccia", price: 7.50 },
     { name: "Cicoria", description: "mozzarella, cicoria, salsiccia", price: 7.50 },
@@ -178,10 +181,10 @@ export const gustiRicchi: MenuItem[] = [
     { name: "Scamorza e speck", description: "mozzarella, scamorza, speck", price: 7.50 },
     { name: "Fiori di zucca e alici (solo di stagione)", description: "mozzarella, fiori di zucca, alici", price: 7.50 },
     { name: "Parmigiana", description: "mozzarella, pomodoro, melanzane, parmigiano, basilico", price: 7.50 },
-    { name: "Peperoni e salsiccia", description: "mozzarella, pomodoro, peperoni, salsiccia", price: 7.50 }
-];
+    { name: "Peperoni e salsiccia", description: "mozzarella, pomodoro, peperoni, salsiccia", price: 7.50 },
+]);
 
-export const gustiSpeciali: MenuItem[] = [
+export const gustiSpeciali: MenuItem[] = withImage([
     { name: "Bresaola", description: "mozzarella, rucola, bresaola, scaglie di parmigiano", price: 9.00 },
     { name: "Radicchio e Speck", description: "mozzarella, scamorza, radicchio e speck", price: 9.00 },
     { name: "Porcini e Crudo", description: "mozzarella, porcini, prosciutto crudo", price: 9.00 },
@@ -189,10 +192,16 @@ export const gustiSpeciali: MenuItem[] = [
     { name: "Tartufo e speck", description: "mozzarella, crema di tartufo, speck", price: 9.00 },
     { name: "Rucola e porcini", description: "mozzarella, pomodoro, porcini, rucola", price: 9.00 },
     { name: "Patate e porcini", description: "mozzarella, patate, porcini", price: 9.00 },
-    { name: "Localetto", description: "pomodoro, mozzarella, salsiccia, salame piccante, scaglie di parmigiano, glassa di aceto balsamico", price: 9.00 }
-];
+    {
+        name: "Localetto",
+        description:
+            "pomodoro, mozzarella, salsiccia, salame piccante, scaglie di parmigiano, glassa di aceto balsamico",
+        price: 9.0,
+        featured: true,
+    },
+]);
 
-export const gustiAutunnoInverno: MenuItem[] = [
+export const gustiAutunnoInverno: MenuItem[] = withImage([
     { name: "Zucca", description: "mozzarella, crema di zucca, guanciale, scaglie di parmigiano", price: 9.00 },
     { name: "Amatriciana", description: "mozzarella, pomodoro, guanciale, pecorino, pepe", price: 7.50 },
     { name: "Patate e Lardo", description: "mozzarella, patate, lardo alle spezie, rosmarino", price: 7.50 },
@@ -200,8 +209,8 @@ export const gustiAutunnoInverno: MenuItem[] = [
     { name: "Cicoria e Lardo", description: "mozzarella, cicoria ripassata, lardo alle spezie, pachino", price: 9.00 },
     { name: "Broccoletti e Guanciale", description: "mozzarella, broccoletti ripassati, guanciale, scamorza", price: 9.00 },
     { name: "Tartufo", description: "mozzarella, crema di tartufo, funghi champignon, salsiccia", price: 9.00 },
-    { name: "Localetto Special", description: "mozzarella, quattro formaggi, salsiccia, salame piccante", price: 9.00 }
-];
+    { name: "Localetto Special", description: "mozzarella, quattro formaggi, salsiccia, salame piccante", price: 9.00 },
+]);
 
 export const gustiInvernaliRicchi = gustiAutunnoInverno.filter(item =>
     ["Amatriciana", "Patate e Lardo", "Marinara e Speck"].includes(item.name)
@@ -211,7 +220,7 @@ export const gustiInvernaliSpeciali = gustiAutunnoInverno.filter(item =>
     !["Amatriciana", "Patate e Lardo", "Marinara e Speck"].includes(item.name)
 );
 
-export const gustiEstivi: MenuItem[] = [
+export const gustiEstivi: MenuItem[] = withImage([
     { name: "Zucchine special", description: "mozzarella, zucchine, fiori di zucca, scamorza", price: 9.00 },
     { name: "Salsa Rosa", description: "pomodoro, maionese, salmone, rucola, gamberetti", price: 9.00 },
     { name: "Salmone", description: "mozzarella, rucola e salmone", price: 9.00 },
@@ -220,17 +229,17 @@ export const gustiEstivi: MenuItem[] = [
     { name: "Fiori e Pancetta", description: "mozzarella, fiori di zucca, pachino, pancetta", price: 9.00 },
     { name: "Foggiana", description: "pomodoro, alici, olive nere, capperi, pachino, origano", price: 7.50 },
     { name: "Pachino", description: "mozzarella, pachino, scamorza, basilico", price: 7.50 },
-    { name: "Gamberetti", description: "pomodoro, maionese, lattuga, gamberetti", price: 9.00 }
-];
+    { name: "Gamberetti", description: "pomodoro, maionese, lattuga, gamberetti", price: 9.00 },
+]);
 
-export const contorni: MenuItem[] = [
+export const contorni: MenuItem[] = withImage([
     { name: "Cicoria ripassata o all’agro", description: "", price: 5.00 },
     { name: "Verdura di stagione", description: "", price: 5.00 },
     { name: "Insalata mista o verde", description: "", price: 5.00 },
-    { name: "Patatine fritte*", description: "", price: 5.00 }
-];
+    { name: "Patatine fritte*", description: "", price: 5.00 },
+]);
 
-export const viniRossi: MenuItem[] = [
+export const viniRossi: MenuItem[] = withImage([
     { name: "Vino della casa", description: "", price: 11.00, options: [
         { quantity: "1 lt", price: 11.00 },
         { quantity: "½ lt", price: 6.00 },
@@ -238,10 +247,10 @@ export const viniRossi: MenuItem[] = [
     ] },
     { name: "Defuk - Rosso Merlot (Antica cantina Leonardi di Montefiascone)", description: "", price: 17.00 },
     { name: "Veste Porpora (Tenuta Ronci di Nepi)", description: "", price: 17.00 },
-    { name: "Terra (“Le Querce Antiche” di Vasanello)", description: "", price: 17.00 }
-];
+    { name: "Terra (“Le Querce Antiche” di Vasanello)", description: "", price: 17.00 },
+]);
 
-export const viniBianchi: MenuItem[] = [
+export const viniBianchi: MenuItem[] = withImage([
     {
         name: "Vino alla spina frizzante Montelvini",
         price: 11.00,
@@ -253,10 +262,10 @@ export const viniBianchi: MenuItem[] = [
       },
       { name: "Semia (“Le Querce Antiche” di Vasanello)", price: 17.00 },
       { name: "Oro di Né (Tenuta Ronco di Nepi)", price: 17.00 },
-      { name: "Vermentino (Antica Cantina Leonardi di Montefiascone)", price: 17.00 }
-];
+      { name: "Vermentino (Antica Cantina Leonardi di Montefiascone)", price: 17.00 },
+]);
 
-export const bevandeAnalcoliche: MenuItem[] = [
+export const bevandeAnalcoliche: MenuItem[] = withImage([
     {
         name: "Acqua minerale (naturale o effervescente) 0,75 lt",
         price: 2.00,
@@ -273,9 +282,9 @@ export const bevandeAnalcoliche: MenuItem[] = [
         name: "Caffè",
         price: 2.00,
       },
-];
+]);
 
-export const bevandeAlcoliche: MenuItem[] = [
+export const bevandeAlcoliche: MenuItem[] = withImage([
     {
         name: "Birra alla spina",
         options: [
@@ -285,9 +294,9 @@ export const bevandeAlcoliche: MenuItem[] = [
         ]
       },
       { name: "Liquori e amari", price: 3.00 },
-];
+]);
 
-export const dolci: MenuItem[] = [
+export const dolci: MenuItem[] = withImage([
     { name: "Ciambelline al vino", price: 4.00 },
     { name: "Tozzetti con Vin Santo", price: 4.00 },
     { name: "Tartufo bianco/nero *", price: 5.00 },
@@ -296,4 +305,153 @@ export const dolci: MenuItem[] = [
     { name: "Semifreddo agli agrumi *", price: 5.00 },
     { name: "Cheesecake *", price: 5.00 },
     { name: "Tiramisù *", price: 5.00 },
+]);
+
+export type MenuSectionGroup = {
+    title: string;
+    items: MenuItem[];
+};
+
+export type MenuSection = {
+    id: string;
+    label: string;
+    shortLabel?: string;
+    description: string;
+    fallbackImage: string;
+    items?: MenuItem[];
+    groups?: MenuSectionGroup[];
+    pricing?: string[];
+    notice?: { title: string; body: string[] };
+    kind: "items" | "groups" | "info";
+};
+
+const PIZZA_DESCRIPTION =
+    "Le nostre pizze alla pala, croccanti fuori e morbide dentro.";
+
+export const menuSections: MenuSection[] = [
+    {
+        id: "antipasti",
+        label: "Antipasti",
+        shortLabel: "Antipasti",
+        description:
+            "Per iniziare con gusto: bruschette, fritti e taglieri di salumi e formaggi locali.",
+        fallbackImage: "/menu_bg.webp",
+        items: Antipasti,
+        kind: "items",
+    },
+    {
+        id: "semplici",
+        label: "Gusti semplici",
+        shortLabel: "Semplici",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiSemplici,
+        pricing: [
+            "1 metro € 24,00",
+            "½ metro € 12,00",
+            "Small € 6,00",
+            "Mozz. senza lattosio € 1,00",
+        ],
+        notice: {
+            title: "Pizza alla pala al metro",
+            body: [
+                "Il prezzo totale varia a seconda dei gusti: sommate il prezzo dei singoli gusti scelti.",
+                "1 metro – 4 gusti – consigliato per 4 persone",
+                "¾ di metro – 3 gusti – consigliato per 3 persone",
+                "½ metro – 2 gusti – consigliato per 2 persone",
+                "Small – 1 gusto – consigliata per 1 persona",
+            ],
+        },
+        kind: "items",
+    },
+    {
+        id: "ricchi",
+        label: "Gusti ricchi",
+        shortLabel: "Ricchi",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiRicchi,
+        pricing: [
+            "1 metro € 30,00",
+            "½ metro € 15,00",
+            "Small € 7,50",
+            "Mozz. senza lattosio € 1,00",
+        ],
+        kind: "items",
+    },
+    {
+        id: "speciali",
+        label: "Gusti speciali",
+        shortLabel: "Speciali",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiSpeciali,
+        pricing: [
+            "1 metro € 36,00",
+            "½ metro € 18,00",
+            "Small € 9,00",
+            "Mozz. senza lattosio € 1,00",
+        ],
+        kind: "items",
+    },
+    {
+        id: "estivi",
+        label: "Gusti estivi",
+        shortLabel: "Estivi",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiEstivi,
+        pricing: [
+            "1 metro € 30,00",
+            "½ metro € 15,00",
+            "Small € 7,50",
+            "Mozz. senza lattosio € 1,00",
+        ],
+        kind: "items",
+    },
+    {
+        id: "vini",
+        label: "Vini",
+        shortLabel: "Vini",
+        description:
+            "Rossi e bianchi selezionati, dalla bottiglia al calice per accompagnare ogni piatto.",
+        fallbackImage: "/menu_bg.webp",
+        groups: [
+            { title: "Vini rossi", items: viniRossi },
+            { title: "Vini bianchi", items: viniBianchi },
+        ],
+        kind: "groups",
+    },
+    {
+        id: "bevande",
+        label: "Bevande",
+        shortLabel: "Bevande",
+        description:
+            "Tra un morso e un sorso: analcoliche fresche e birra alla spina.",
+        fallbackImage: "/menu_bg.webp",
+        groups: [
+            { title: "Bevande analcoliche", items: bevandeAnalcoliche },
+            { title: "Bevande alcoliche", items: bevandeAlcoliche },
+        ],
+        kind: "groups",
+    },
+    {
+        id: "dolci",
+        label: "Dolci",
+        shortLabel: "Dolci",
+        description:
+            "Per finire in dolcezza: semifreddi, tiramisù e specialità della casa.",
+        fallbackImage: "/menu_bg.webp",
+        items: dolci,
+        kind: "items",
+    },
+    {
+        id: "info",
+        label: "Info",
+        shortLabel: "Info",
+        description:
+            "Servizi, note sui prodotti surgelati e informazioni sui prezzi indicativi.",
+        fallbackImage: "/menu_bg.webp",
+        kind: "info",
+    },
 ];
