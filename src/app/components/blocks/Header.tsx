@@ -64,13 +64,13 @@ export default function Header() {
               <span className="whitespace-nowrap">Prenota tavolo</span>
             </a>
             <a
-              href="#asporto"
+              href="/menu"
               className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#BE9859] hover:bg-[#EFE9D1]
                 w-full md:w-auto md:min-w-[240px] md:max-w-[240px] md:px-6 md:py-2.5 md:text-lg
                 lg:min-w-[260px] lg:max-w-[260px] lg:px-7 lg:py-3 lg:text-xl"
             >
               <ShoppingBag className="w-6 h-6 mr-3 flex-shrink-0" />
-              <span className="whitespace-nowrap">Ordina da asporto</span>
+              <span className="whitespace-nowrap">Vedi il menu</span>
             </a>
           </div>
      

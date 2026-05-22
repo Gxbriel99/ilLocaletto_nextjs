@@ -60,10 +60,10 @@ export default function About() {
               Sutri.
             </p>
             <a
-              href="#prenota"
+              href="/menu"
               className="mx-auto mt-1 inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-3 text-lg font-bold text-[#5D4037] shadow transition-colors hover:bg-[#5D4037] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg md:mx-0 lg:mx-0"
             >
-              Scopri di più
+              Vedi il menu
             </a>
           </header>
 
