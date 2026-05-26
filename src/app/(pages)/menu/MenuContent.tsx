@@ -217,7 +217,7 @@ function PizzaMetroBlock({
           {pricing.map((line) => (
             <div
               key={line}
-              className="rounded-xl border-2 border-[#BE9859] bg-white/70 px-3 py-3 text-center text-sm font-extrabold text-[#801917] shadow-sm"
+              className="min-h-12 rounded-xl border-2 border-[#BE9859] bg-white/70 px-3 py-3 text-center text-sm font-extrabold leading-snug text-[#801917] shadow-sm sm:text-base"
             >
               {line}
             </div>
@@ -313,7 +313,7 @@ export default function MenuContent() {
           </p>
         </header>
 
-        <div className="w-full max-h-[min(58dvh,40rem)] overflow-y-auto overscroll-contain py-5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:max-h-[min(68vh,44rem)] sm:py-8">
+        <div className="w-full overflow-visible py-5 sm:max-h-[min(68vh,44rem)] sm:overflow-y-auto sm:overscroll-contain sm:py-8 sm:[scrollbar-width:none] sm:[-ms-overflow-style:none] sm:[&::-webkit-scrollbar]:hidden">
           {section.pricing && PIZZA_SECTION_IDS.has(section.id) ? (
             <PizzaMetroBlock pricing={section.pricing} />
           ) : null}
