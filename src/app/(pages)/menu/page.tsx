@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import MenuContent from "./MenuContent";
+
+
 import { info } from "../../data/info";
+import MenuContent from "./MenuContent";
 
 export const metadata: Metadata = {
   title: `Menu | ${info.businessName}`,
@@ -21,7 +23,7 @@ export default function MenuPage() {
           className="object-cover object-center"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-[#EFE9D1]/75 backdrop-blur-[2px]" />
+        <div className="absolute inset-0  backdrop-blur-[2px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-3 pb-20 pt-20 sm:px-6 sm:pt-28 lg:px-8">

@@ -1,5 +1,4 @@
 import type { MenuItem } from "../../data/menu";
-import { formatPrice } from "./formatPrice";
 
 type MenuItemCardProps = {
   item: MenuItem;
@@ -12,6 +11,7 @@ export default function MenuItemCard({
 }: MenuItemCardProps) {
   const description = item.description?.trim();
   const hasOptions = Boolean(item.options?.length);
+  const format = (price: number) => `${price.toFixed(2).replace(".", ",")} €`;
 
   return (
     <article className="overflow-hidden rounded-xl border-2 border-[#BE9859]/25 bg-white shadow-md transition-shadow hover:shadow-lg">
@@ -29,7 +29,7 @@ export default function MenuItemCard({
             </h3>
             {item.price != null && !hasOptions ? (
               <span className="text-base font-bold whitespace-nowrap text-[#801917]">
-                {formatPrice(item.price)}
+                {format(item.price)}
               </span>
             ) : null}
           </div>
@@ -59,7 +59,7 @@ export default function MenuItemCard({
                 >
                   <span>{opt.quantity}</span>
                   <span className="font-bold text-[#801917] sm:hidden">
-                    {formatPrice(opt.price)}
+                    {format(opt.price)}
                   </span>
                 </li>
               ))}
@@ -74,12 +74,12 @@ export default function MenuItemCard({
                 key={`${item.name}-${opt.quantity}-price`}
                 className="text-lg font-bold whitespace-nowrap text-[#801917] md:text-xl"
               >
-                {formatPrice(opt.price)}
+                {format(opt.price)}
               </span>
             ))
           ) : item.price != null ? (
             <span className="text-xl font-bold whitespace-nowrap text-[#801917] sm:text-2xl">
-              {formatPrice(item.price)}
+              {format(item.price)}
             </span>
           ) : null}
         </div>
