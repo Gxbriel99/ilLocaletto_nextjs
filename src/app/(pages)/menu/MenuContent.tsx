@@ -7,11 +7,9 @@ import MenuItemCard from "../../components/menu/MenuItemCard";
 
 function ItemsList({
   items,
-  fallbackImage,
   compact = false,
 }: {
   items: MenuItem[];
-  fallbackImage: string;
   compact?: boolean;
 }) {
   const sorted = [...items].sort(
@@ -22,11 +20,7 @@ function ItemsList({
     <ul className={compact ? "flex flex-col gap-2" : "flex flex-col gap-4"}>
       {sorted.map((item) => (
         <li key={item.name}>
-          <MenuItemCard
-            item={item}
-            fallbackImage={fallbackImage}
-            compact={compact}
-          />
+          <MenuItemCard item={item} compact={compact} />
         </li>
       ))}
     </ul>
@@ -131,7 +125,6 @@ function SectionBody({ section }: { section: MenuSection }) {
             </h3>
             <ItemsList
               items={group.items}
-              fallbackImage={section.fallbackImage}
               compact={PIZZA_SECTION_IDS.has(section.id)}
             />
           </div>
@@ -144,7 +137,6 @@ function SectionBody({ section }: { section: MenuSection }) {
     return (
       <ItemsList
         items={section.items}
-        fallbackImage={section.fallbackImage}
         compact={PIZZA_SECTION_IDS.has(section.id)}
       />
     );
@@ -160,9 +152,6 @@ export default function MenuContent() {
   return (
     <div className="w-full">
       <header className="mb-8 text-center sm:mb-10">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#BE9859]">
-          {info.businessName}
-        </p>
         <h1 className="text-3xl font-bold uppercase text-[#801917] sm:text-4xl lg:text-5xl">
           Il nostro menu
         </h1>

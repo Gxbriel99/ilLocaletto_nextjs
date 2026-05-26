@@ -12,7 +12,9 @@ export default function Delivery() {
         src="/delivery_bg.webp"
         alt=""
         fill
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 1600px"
+        quality={100}
+        unoptimized
         className="pointer-events-none object-cover object-center"
         aria-hidden
       />

@@ -36,13 +36,15 @@ export default function About() {
           alt=""
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 1600px"
+          quality={100}
+          unoptimized
           className="object-cover object-[center_32%] md:object-[center_45%]"
           aria-hidden
         />
       </div>
 
-      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pb-8 pt-[8vh] sm:px-6 sm:pb-10 sm:pt-[9vh] md:px-8 md:pb-[40vh] md:pt-[10vh] lg:top-[15vh] lg:px-8 lg:pb-0 lg:pt-0">
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pb-8 pt-[18vh] sm:px-6 sm:pb-10 sm:pt-[9vh] md:px-8 md:pb-[40vh] md:pt-[10vh] lg:top-[15vh] lg:px-8 lg:pb-0 lg:pt-0">
         <div className="flex flex-col gap-16 sm:gap-20 md:grid md:grid-cols-2 md:items-start md:gap-x-10 md:gap-y-8 lg:grid lg:grid-cols-2 lg:gap-8">
           <header className="mx-auto w-full max-w-xl space-y-3 text-center sm:space-y-4 md:mx-0 md:max-w-none md:text-left md:space-y-4 lg:mx-0 lg:max-w-xl lg:text-start lg:space-y-5">
             <h2 className="text-center text-2xl font-bold text-[#801917] text-shadow-[1px_1px_3px_rgba(255,255,255,0.9),0_0_12px_rgba(255,255,255,0.55)] sm:text-2xl md:text-start md:text-3xl lg:text-5xl">
@@ -99,7 +101,9 @@ export default function About() {
           src="/paesaggio.webp"
           alt="Paesaggio intorno a Sutri"
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 1600px"
+          quality={100}
+          unoptimized
           className="object-contain object-top md:object-[center_15%] lg:object-bottom"
         />
       </div>

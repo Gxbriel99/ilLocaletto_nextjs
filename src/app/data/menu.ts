@@ -19,7 +19,7 @@ function withImage(items: MenuItem[]): MenuItem[] {
 export const Antipasti: MenuItem[] = [
     {
         name: "Tris di bruschette",
-        description: "",
+        description: "Pane tostato con condimenti della casa (selezione del giorno).",
         price: 4.0,
         image: "#",
     },
@@ -39,13 +39,13 @@ export const Antipasti: MenuItem[] = [
     */
     {
         name: "Fiore di zucca fritto *",
-        description: "",
+        description: "Croccante e leggero, fritto al momento.",
         price: 1.8,
         image: "#",
     },
     {
         name: "Filetto di baccalà fritto *",
-        description: "",
+        description: "Filetto dorato e fragrante, servito caldo.",
         price: 2.3,
         image: "#",
     },
@@ -57,13 +57,13 @@ export const Antipasti: MenuItem[] = [
     },
     {
         name: "Tagliere di salumi locali",
-        description: "",
+        description: "Selezione di salumi del territorio.",
         price: 12.0,
         image: "#",
     },
     {
         name: "Tagliere di formaggi locali",
-        description: "",
+        description: "Assortimento di formaggi locali selezionati.",
         price: 16.0,
         image: "#",
     },
@@ -83,19 +83,19 @@ export const Antipasti: MenuItem[] = [
     */
     {
         name: "1 Supplì",
-        description: "",
+        description: "Classico supplì, croccante fuori e filante dentro.",
         price: 1.5,
         image: "#",
     },
     {
         name: "1 Crocchetta",
-        description: "",
+        description: "Crocchetta di patate, fritta al momento.",
         price: 0.7,
         image: "#",
     },
     {
         name: "1 Oliva ascolana",
-        description: "",
+        description: "Oliva ripiena impanata e fritta.",
         price: 0.7,
         image: "#",
     },
@@ -115,13 +115,13 @@ export const Antipasti: MenuItem[] = [
     */
     {
         name: "Coccetto di Focaccia “extra”",
-        description: "",
+        description: "Focaccia calda, perfetta da condividere.",
         price: 2.0,
         image: "#",
     },
     {
         name: "Patatine fritte*",
-        description: "",
+        description: "Porzione di patatine, croccanti e dorate.",
         price: 5.0,
         image: "#",
     },
@@ -233,26 +233,27 @@ export const gustiEstivi: MenuItem[] = withImage([
 ]);
 
 export const contorni: MenuItem[] = withImage([
-    { name: "Cicoria ripassata o all’agro", description: "", price: 5.00 },
-    { name: "Verdura di stagione", description: "", price: 5.00 },
-    { name: "Insalata mista o verde", description: "", price: 5.00 },
-    { name: "Patatine fritte*", description: "", price: 5.00 },
+    { name: "Cicoria ripassata o all’agro", description: "Contorno tradizionale, a scelta ripassata o all’agro.", price: 5.00 },
+    { name: "Verdura di stagione", description: "Selezione di verdure di stagione.", price: 5.00 },
+    { name: "Insalata mista o verde", description: "Insalata fresca, a scelta mista o verde.", price: 5.00 },
+    { name: "Patatine fritte*", description: "Porzione di patatine, croccanti e dorate.", price: 5.00 },
 ]);
 
 export const viniRossi: MenuItem[] = withImage([
-    { name: "Vino della casa", description: "", price: 11.00, options: [
+    { name: "Vino della casa", description: "Vino rosso della casa.", price: 11.00, options: [
         { quantity: "1 lt", price: 11.00 },
         { quantity: "½ lt", price: 6.00 },
         { quantity: "Calice", price: 3.50 }
     ] },
-    { name: "Defuk - Rosso Merlot (Antica cantina Leonardi di Montefiascone)", description: "", price: 17.00 },
-    { name: "Veste Porpora (Tenuta Ronci di Nepi)", description: "", price: 17.00 },
-    { name: "Terra (“Le Querce Antiche” di Vasanello)", description: "", price: 17.00 },
+    { name: "Defuk - Rosso Merlot (Antica cantina Leonardi di Montefiascone)", description: "Bottiglia 0,75 lt.", price: 17.00 },
+    { name: "Veste Porpora (Tenuta Ronci di Nepi)", description: "Bottiglia 0,75 lt.", price: 17.00 },
+    { name: "Terra (“Le Querce Antiche” di Vasanello)", description: "Bottiglia 0,75 lt.", price: 17.00 },
 ]);
 
 export const viniBianchi: MenuItem[] = withImage([
     {
         name: "Vino alla spina frizzante Montelvini",
+        description: "Vino bianco frizzante alla spina.",
         price: 11.00,
         options: [
           { quantity: "1 lt", price: 11.00 },
@@ -260,26 +261,30 @@ export const viniBianchi: MenuItem[] = withImage([
           { quantity: "Calice", price: 3.50 }
         ]
       },
-      { name: "Semia (“Le Querce Antiche” di Vasanello)", price: 17.00 },
-      { name: "Oro di Né (Tenuta Ronco di Nepi)", price: 17.00 },
-      { name: "Vermentino (Antica Cantina Leonardi di Montefiascone)", price: 17.00 },
+      { name: "Semia (“Le Querce Antiche” di Vasanello)", description: "Bottiglia 0,75 lt.", price: 17.00 },
+      { name: "Oro di Né (Tenuta Ronco di Nepi)", description: "Bottiglia 0,75 lt.", price: 17.00 },
+      { name: "Vermentino (Antica Cantina Leonardi di Montefiascone)", description: "Bottiglia 0,75 lt.", price: 17.00 },
 ]);
 
 export const bevandeAnalcoliche: MenuItem[] = withImage([
     {
         name: "Acqua minerale (naturale o effervescente) 0,75 lt",
+        description: "Bottiglia 0,75 lt (naturale o frizzante).",
         price: 2.00,
       },
       {
         name: "Coca Cola / Fanta / Coca Cola zero cl33 in vetro",
+        description: "Bottiglia in vetro 33 cl.",
         price: 3.00,
       },
       {
         name: "Coca–Cola 1lt",
+        description: "Bottiglia 1 litro.",
         price: 4.50,
       },
       {
         name: "Caffè",
+        description: "Espresso.",
         price: 2.00,
       },
 ]);
@@ -287,24 +292,25 @@ export const bevandeAnalcoliche: MenuItem[] = withImage([
 export const bevandeAlcoliche: MenuItem[] = withImage([
     {
         name: "Birra alla spina",
+        description: "Birra alla spina, a scelta formato.",
         options: [
           { quantity: "piccola", price: 3.50 },
           { quantity: "media", price: 6.00 },
           { quantity: "1lt", price: 12.00 },
         ]
       },
-      { name: "Liquori e amari", price: 3.00 },
+      { name: "Liquori e amari", description: "Selezione di liquori e amari.", price: 3.00 },
 ]);
 
 export const dolci: MenuItem[] = withImage([
-    { name: "Ciambelline al vino", price: 4.00 },
-    { name: "Tozzetti con Vin Santo", price: 4.00 },
-    { name: "Tartufo bianco/nero *", price: 5.00 },
-    { name: "Sorbetto al cocco o al limone *", price: 5.00 },
-    { name: "Semifreddo al torroncino *", price: 5.00 },
-    { name: "Semifreddo agli agrumi *", price: 5.00 },
-    { name: "Cheesecake *", price: 5.00 },
-    { name: "Tiramisù *", price: 5.00 },
+    { name: "Ciambelline al vino", description: "Biscotti tradizionali, perfetti a fine pasto.", price: 4.00 },
+    { name: "Tozzetti con Vin Santo", description: "Cantucci con Vin Santo.", price: 4.00 },
+    { name: "Tartufo bianco/nero *", description: "Gelato tartufo, a scelta bianco o nero.", price: 5.00 },
+    { name: "Sorbetto al cocco o al limone *", description: "Sorbetto rinfrescante, cocco o limone.", price: 5.00 },
+    { name: "Semifreddo al torroncino *", description: "Semifreddo cremoso al torroncino.", price: 5.00 },
+    { name: "Semifreddo agli agrumi *", description: "Semifreddo fresco agli agrumi.", price: 5.00 },
+    { name: "Cheesecake *", description: "Cheesecake cremosa.", price: 5.00 },
+    { name: "Tiramisù *", description: "Tiramisù della tradizione.", price: 5.00 },
 ]);
 
 export type MenuSectionGroup = {
@@ -326,7 +332,7 @@ export type MenuSection = {
 };
 
 const PIZZA_DESCRIPTION =
-    "Le nostre pizze alla pala, croccanti fuori e morbide dentro.";
+    "Le nostre pizze alla pala: impasto a lunga lievitazione, croccante fuori e morbido dentro. Scegli il tuo gusto e lasciati conquistare dal profumo appena sfornato.";
 
 export const menuSections: MenuSection[] = [
     {

@@ -130,15 +130,6 @@ export default function Footer() {
             diritti riservati.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:gap-x-6">
-            <Link
-              href="/privacy-policy"
-              className="transition-colors hover:text-[#BE9859]"
-            >
-              Privacy Policy
-            </Link>
-            <span className="hidden text-white/25 sm:inline" aria-hidden>
-              ·
-            </span>
             <span>
               Design by{" "}
               <a
