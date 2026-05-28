@@ -53,12 +53,7 @@ const menuSections: MenuSection[] = [
     description: PIZZA_DESCRIPTION,
     fallbackImage: "/menu_bg.webp",
     items: gustiRicchi,
-    pricing: [
-      "1 metro € 30,00",
-      "½ metro € 15,00",
-      "Small € 7,50",
-      "Mozz. senza lattosio € 1,00",
-    ],
+    pricing: ["Mozz. senza lattosio € 1,00"],
     kind: "items",
   },
   {
@@ -83,12 +78,7 @@ const menuSections: MenuSection[] = [
     description: PIZZA_DESCRIPTION,
     fallbackImage: "/menu_bg.webp",
     items: gustiEstivi,
-    pricing: [
-      "1 metro € 30,00",
-      "½ metro € 15,00",
-      "Small € 7,50",
-      "Mozz. senza lattosio € 1,00",
-    ],
+    pricing: ["Mozz. senza lattosio € 1,00"],
     kind: "items",
   },
   {
@@ -153,7 +143,7 @@ function ItemsList({
 
 function InfoBlock() {
   return (
-    <div className="space-y-4 rounded-2xl border-2 border-[#BE9859]/55 bg-[#EFE9D1] p-6 text-[#2B1B18] shadow-sm">
+    <div className="space-y-4 rounded-2xl border-2 border-[#BE9859]/55 bg-localetto-cream/35 p-6 text-[#2B1B18] shadow-sm backdrop-blur-md">
       <p className="text-base font-semibold leading-relaxed sm:text-lg">
         <strong className="font-extrabold text-[#801917]">
           Servizio torta (a persona):
@@ -182,13 +172,20 @@ function InfoBlock() {
 
 const PIZZA_SECTION_IDS = new Set(["semplici", "ricchi", "speciali", "estivi"]);
 
+function isMozzarellaSupplement(line: string) {
+  return /mozz|lattosio/i.test(line);
+}
+
 function PizzaMetroBlock({
   pricing,
 }: {
   pricing: string[];
 }) {
+  const metroLines = pricing.filter((line) => !isMozzarellaSupplement(line));
+  const supplement = pricing.find(isMozzarellaSupplement);
+
   return (
-    <aside className="mb-5 w-full rounded-2xl border-2 border-[#BE9859]/55 bg-[#EFE9D1] shadow-lg sm:mb-6">
+    <aside className="mb-5 w-full rounded-2xl border-2 border-[#BE9859]/40 bg-localetto-cream/35 shadow-lg backdrop-blur-md sm:mb-6">
       <div className="flex flex-col gap-3 p-4 sm:p-6">
         <div className="flex items-start gap-3">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#801917] text-white shadow-sm">
@@ -213,16 +210,24 @@ function PizzaMetroBlock({
           </div>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-2 min-[420px]:grid-cols-2 lg:grid-cols-4">
-          {pricing.map((line) => (
-            <div
-              key={line}
-              className="min-h-12 rounded-xl border-2 border-[#BE9859] bg-white/70 px-3 py-3 text-center text-sm font-extrabold leading-snug text-[#801917] shadow-sm sm:text-base"
-            >
-              {line}
-            </div>
-          ))}
-        </div>
+        {metroLines.length > 0 ? (
+          <div className="grid w-full grid-cols-1 gap-2 min-[420px]:grid-cols-2 lg:grid-cols-4">
+            {metroLines.map((line) => (
+              <div
+                key={line}
+                className="min-h-12 rounded-xl border-2 border-[#BE9859] bg-white/70 px-3 py-3 text-center text-sm font-extrabold leading-snug text-[#801917] shadow-sm sm:text-base"
+              >
+                {line}
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {supplement ? (
+          <p className="border-t border-[#BE9859]/35 pt-3 text-center text-sm font-medium leading-relaxed text-[#5D4037] sm:text-base">
+            {supplement}
+          </p>
+        ) : null}
       </div>
     </aside>
   );
@@ -320,9 +325,11 @@ export default function MenuContent() {
           <SectionBody section={section} />
         </div>
 
-        <div className="mt-6">
-          <InfoBlock />
-        </div>
+        {section.id === "dolci" ? (
+          <div className="mt-6">
+            <InfoBlock />
+          </div>
+        ) : null}
       </div>
     </div>
   );

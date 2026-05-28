@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --color-localetto-cream: #efe9d1;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
