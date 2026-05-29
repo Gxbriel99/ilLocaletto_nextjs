@@ -99,7 +99,7 @@ export default function GalleriaPage() {
             <a
               href="#galleria"
               aria-label="Chiudi"
-              className="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white"
+              className="absolute right-4 top-4 z-20 grid h-11 w-11 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@ export default function GalleriaPage() {
             <a
               href={prev}
               aria-label="Foto precedente"
-              className="absolute left-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white sm:left-6 sm:h-14 sm:w-14"
+              className="absolute left-3 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white sm:left-6 sm:h-14 sm:w-14"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ export default function GalleriaPage() {
               </svg>
             </a>
 
-            <figure className="relative z-10 flex h-[78vh] w-full max-w-5xl flex-col items-center justify-center">
+            <figure className="pointer-events-none relative z-10 flex h-[78vh] w-full max-w-5xl flex-col items-center justify-center">
               <span className="relative block h-full w-full">
                 <Image
                   src={item.path}
@@ -160,7 +160,7 @@ export default function GalleriaPage() {
             <a
               href={next}
               aria-label="Foto successiva"
-              className="absolute right-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white sm:right-6 sm:h-14 sm:w-14"
+              className="absolute right-3 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#232325]/60 text-[#EFE9D1] ring-1 ring-[#BE9859]/40 transition hover:bg-[#801917] hover:text-white sm:right-6 sm:h-14 sm:w-14"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

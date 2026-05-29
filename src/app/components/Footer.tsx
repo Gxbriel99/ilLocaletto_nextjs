@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, UtensilsCrossed } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { info } from "../data/info";
 
 const NAV_LINKS = [
@@ -96,14 +96,6 @@ export default function Footer() {
                 <span>{info.address}</span>
               </li>
             </ul>
-
-            <a
-              href={`tel:+39${info.phone.replace(/\s/g, "")}`}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded bg-[#801917] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow transition-colors hover:bg-[#BE9859] sm:w-auto md:mt-5"
-            >
-              <UtensilsCrossed className="size-4" aria-hidden />
-              Prenota tavolo
-            </a>
 
             <h2 className="mb-4 mt-8 text-xs font-bold uppercase tracking-[0.2em] text-[#BE9859] md:mt-10 md:mb-5">
               Orari
