@@ -143,7 +143,7 @@ export default function GalleriaPage() {
                   src={item.path}
                   alt={item.title}
                   fill
-                  sizes="100vw"
+                  sizes="(min-width: 1024px) 1024px, 100vw"
                   className="rounded-xl object-contain"
                 />
               </span>

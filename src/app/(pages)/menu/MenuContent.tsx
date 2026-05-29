@@ -211,7 +211,7 @@ function PizzaMetroBlock({
         </div>
 
         {metroLines.length > 0 ? (
-          <div className="grid w-full grid-cols-1 gap-2 min-[420px]:grid-cols-2 lg:grid-cols-4">
+          <div className="grid w-full grid-cols-1 gap-2 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(8rem,1fr))]">
             {metroLines.map((line) => (
               <div
                 key={line}
