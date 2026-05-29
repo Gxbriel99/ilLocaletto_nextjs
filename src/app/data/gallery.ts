@@ -1,48 +1,47 @@
 export interface GalleryImage {
   title: string;
   path: string;
-  placeholderClass: string;
 }
 
 export const galleryImages: GalleryImage[] = [
   {
-    title: "Pizza alla pala",
-    path: "/gallery/pizza-alla-pala.webp",
-    placeholderClass: "bg-[#801917]",
+    title: "La nostra sala",
+    path: "/gallery/sala1.jpg",
   },
   {
-    title: "Forno e preparazione",
-    path: "/gallery/forno-preparazione.webp",
-    placeholderClass: "bg-[#BE9859]",
+    title: "Atmosfera serale",
+    path: "/gallery/saladark1.jpeg",
   },
   {
-    title: "Gusti della casa",
-    path: "/gallery/gusti-casa.webp",
-    placeholderClass: "bg-[#5D4037]",
+    title: "Tavoli e dettagli",
+    path: "/gallery/saladark2.jpeg",
   },
   {
-    title: "Antipasti e taglieri",
-    path: "/gallery/antipasti-taglieri.webp",
-    placeholderClass: "bg-[#801917]",
+    title: "Le pale alla parete",
+    path: "/gallery/saladark3.jpeg",
   },
   {
-    title: "Sala e atmosfera",
-    path: "/gallery/sala-atmosfera.webp",
-    placeholderClass: "bg-[#BE9859]",
+    title: "A lume di candela",
+    path: "/gallery/sala2.jpg",
   },
   {
-    title: "Dolci artigianali",
-    path: "/gallery/dolci-artigianali.webp",
-    placeholderClass: "bg-[#5D4037]",
+    title: "Il dehors la sera",
+    path: "/gallery/sala3.jpg",
   },
   {
-    title: "Dettagli in cucina",
-    path: "/gallery/dettagli-cucina.webp",
-    placeholderClass: "bg-[#801917]",
+    title: "Pizza alla pala al metro",
+    path: "/gallery/pizza1.jpg",
   },
   {
-    title: "Il Localetto",
-    path: "/gallery/localetto-esterno.webp",
-    placeholderClass: "bg-[#BE9859]",
+    title: "Crudo, scaglie e glassa",
+    path: "/gallery/pizza2.jpg",
+  },
+  {
+    title: "Tagliere di salumi e formaggi",
+    path: "/gallery/tagliere.jpg",
+  },
+  {
+    title: "Salumi e bocconcini",
+    path: "/gallery/tagliere2.jpg",
   },
 ];
