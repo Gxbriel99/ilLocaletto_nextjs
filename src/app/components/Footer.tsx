@@ -32,25 +32,25 @@ export default function Footer() {
               {info.tagline}
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-wide text-[#BE9859]/90 md:justify-start">
-              <a
+              <Link
                 href={info.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#EFE9D1]"
               >
                 Instagram
-              </a>
+              </Link>
               <span className="select-none text-[#BE9859]/40" aria-hidden>
                 ·
               </span>
-              <a
+              <Link
                 href={info.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#EFE9D1]"
               >
                 Facebook
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -83,13 +83,13 @@ export default function Footer() {
             </h2>
             <ul className="space-y-3.5 text-sm text-white/80">
               <li>
-                <a
+                <Link
                   href={`tel:+39${info.phone.replace(/\s/g, "")}`}
                   className="inline-flex items-center justify-center gap-2.5 transition-colors hover:text-[#BE9859] md:justify-start"
                 >
                   <Phone className="size-4 shrink-0 text-[#BE9859]" aria-hidden />
                   +39 {info.phone.trim()}
-                </a>
+                </Link>
               </li>
               <li className="inline-flex items-start justify-center gap-2.5 md:justify-start">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-[#BE9859]" aria-hidden />
@@ -124,14 +124,14 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:gap-x-6">
             <span>
               Design by{" "}
-              <a
+              <Link
                 href={info.designLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-[#BE9859] transition-colors hover:text-[#EFE9D1]"
               >
                 {info.design}
-              </a>
+              </Link>
             </span>
           </div>
         </div>

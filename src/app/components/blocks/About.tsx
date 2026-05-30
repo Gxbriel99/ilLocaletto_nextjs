@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type Feature = {
   icon: string;
@@ -28,11 +29,11 @@ export default function About() {
   return (
     <section
       id="chi-siamo"
-      className="relative isolate z-[900] min-h-screen w-full overflow-visible lg:h-screen"
+      className="relative min-h-screen w-full overflow-hidden md:h-screen"
     >
       <div className="pointer-events-none absolute inset-x-0 -top-20 z-[1] h-[calc(100%+5rem)] w-full overflow-hidden md:-top-15 md:h-[calc(100%+4rem)]">
         <Image
-          src="/about-bg.webp"
+          src="/about_bg.webp"
           alt=""
           fill
           priority
@@ -61,12 +62,12 @@ export default function About() {
               Prenota il tuo tavolo e vieni a scoprire il gusto autentico di Il Localetto a
               Sutri.
             </p>
-            <a
+            <Link
               href="/menu"
               className="mx-auto mt-1 inline-flex w-full items-center justify-center rounded border-2 border-[#5D4037] px-5 py-3 text-lg font-bold text-[#5D4037] shadow transition-colors hover:bg-[#5D4037] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#5D4037] focus:ring-offset-2 sm:w-auto sm:px-6 sm:py-3 sm:text-lg md:mx-0 lg:mx-0"
             >
               Vedi il menu
-            </a>
+            </Link>
           </header>
 
           <ul className="relative z-20 mx-auto list-none w-full max-w-md space-y-3 text-left text-[#5D4037] sm:max-w-lg sm:space-y-3.5 md:mx-0 md:max-w-none md:space-y-4 lg:max-w-lg lg:justify-self-end">

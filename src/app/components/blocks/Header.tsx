@@ -1,9 +1,12 @@
 import { ShoppingBag, UtensilsCrossed } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { info } from "../../data/info";
 
 export default function Header() {
   return (
-    <header className="relative z-[1] h-screen w-full overflow-hidden max-md:-mt-16 max-md:pt-16">
+    <header className="relative h-screen w-full overflow-hidden">
       <Image
         src="/header_bg.webp"
         alt=""
@@ -56,16 +59,16 @@ export default function Header() {
      
           {/* CTA */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:pl-16 lg:pl-0">
-            <a
-              href="#prenota"
+            <Link
+              href={`tel:+39${info.phone.replace(/\s/g, "")}`}
               className="inline-flex items-center justify-center whitespace-nowrap text-white font-semibold px-7 py-3 rounded shadow transition text-xl mb-4 md:mb-0 bg-[#801917] hover:bg-[#BE9859]
                 w-full md:w-auto md:min-w-[240px] md:max-w-[240px] md:px-6 md:py-2.5 md:text-lg
                 lg:min-w-[260px] lg:max-w-[260px] lg:px-7 lg:py-3 lg:text-xl"
             >
               <UtensilsCrossed className="w-6 h-6 mr-3 flex-shrink-0" />
               <span className="whitespace-nowrap">Prenota tavolo</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/menu"
               className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#BE9859] hover:bg-[#EFE9D1]
                 w-full md:w-auto md:min-w-[240px] md:max-w-[240px] md:px-6 md:py-2.5 md:text-lg
@@ -73,7 +76,7 @@ export default function Header() {
             >
               <ShoppingBag className="w-6 h-6 mr-3 flex-shrink-0" />
               <span className="whitespace-nowrap">Vedi il menu</span>
-            </a>
+            </Link>
           </div>
      
         </div>

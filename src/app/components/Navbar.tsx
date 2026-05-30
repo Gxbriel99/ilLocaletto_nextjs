@@ -2,6 +2,7 @@
 
 import { info } from "../data/info";
 import { Phone } from "lucide-react";
+import Link from "next/link";
 import { useId, useState } from "react";
 
 const NAV_LINKS = [
@@ -43,27 +44,27 @@ function MobileMenu({ menuId, onClose }: { menuId: string; onClose: () => void }
         <ul className="flex flex-col gap-4 text-lg font-bold uppercase md:gap-5 md:text-xl">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
-              <a href={href} className="block rounded py-2 hover:text-[#BE9859]" onClick={onClose}>
+              <Link href={href} className="block rounded py-2 hover:text-[#BE9859]" onClick={onClose}>
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
-        <a
+        <Link
           href={`tel:+39${info.phone.replace(/\s/g, "")}`}
           className="mt-8 flex items-center justify-center gap-2 rounded bg-[#801917] py-3 font-semibold hover:bg-[#BE9859]"
           onClick={onClose}
         >
           <Phone className="h-5 w-5" />
           Prenota ora
-        </a>
+        </Link>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-[#BE9859]/35 pt-6 text-xs font-semibold uppercase tracking-wide text-[#BE9859]/90">
           {SOCIAL.map(({ href, label }, i) => (
             <span key={href} className="contents">
               {i > 0 ? <span className="select-none text-[#BE9859]/40" aria-hidden>·</span> : null}
-              <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-[#BE9859]">
+              <Link href={href} target="_blank" rel="noopener noreferrer" className="hover:text-[#BE9859]">
                 {label}
-              </a>
+              </Link>
             </span>
           ))}
         </div>
@@ -94,33 +95,33 @@ export default function Navbar() {
             <HamburgerIcon open={mobileOpen} />
           </button>
 
-          <a href="/" className="flex items-center justify-self-center lg:hidden">
+          <Link href="/" className="flex items-center justify-self-center lg:hidden">
             <img src="/logo.webp" alt="Logo Il Localetto" className="h-10 w-auto md:h-11" />
-          </a>
+          </Link>
 
           <span className="w-10 justify-self-end lg:hidden" aria-hidden="true" />
 
-          <a href="/" className="hidden items-center lg:flex">
+          <Link href="/" className="hidden items-center lg:flex">
             <img src="/logo.webp" alt="Logo Il Localetto" className="h-14 w-auto" />
-          </a>
+          </Link>
           <div className="hidden flex-1 justify-center lg:flex">
             <ul className="flex items-center gap-8 uppercase">
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href} className="transition-colors hover:text-[#BE9859]">
-                  <a href={href} className="text-lg font-semibold">
+                  <Link href={href} className="text-lg font-semibold">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <a
+          <Link
             href={`tel:+39${info.phone.replace(/\s/g, "")}`}
             className="hidden items-center gap-2 rounded bg-[#801917] px-5 py-2 text-base font-semibold uppercase tracking-[0.03em] text-white shadow transition-colors hover:bg-[#BE9859] lg:inline-flex"
           >
             <Phone className="h-5 w-5" />
             Prenota ora
-          </a>
+          </Link>
         </div>
 
         {mobileOpen ? (
