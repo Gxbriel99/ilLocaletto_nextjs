@@ -70,7 +70,7 @@ export default function Header() {
             </Link>
             <Link
               href="/menu"
-              className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#BE9859] hover:bg-[#EFE9D1]
+              className="inline-flex items-center justify-center whitespace-nowrap font-semibold px-7 py-3 rounded shadow transition text-xl text-[#5D4037] bg-[#BE9859] hover:bg-[#801917] hover:text-white active:bg-[#801917] active:text-white
                 w-full md:w-auto md:min-w-[240px] md:max-w-[240px] md:px-6 md:py-2.5 md:text-lg
                 lg:min-w-[260px] lg:max-w-[260px] lg:px-7 lg:py-3 lg:text-xl"
             >

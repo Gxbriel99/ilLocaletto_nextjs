@@ -24,7 +24,7 @@ export default function Delivery() {
             <h2
               className="text-4xl font-bold text-shadow-[2px_2px_6px_rgba(0,0,0,0.5),0_0_16px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              ASPORTO - IL LOCALETTO 
+              ASPORTO - <span className="whitespace-nowrap">IL LOCALETTO</span>
             </h2>
             <p className="text-lg leading-relaxed text-shadow-[1px_1px_4px_rgba(0,0,0,0.45)] sm:text-xl md:text-2xl lg:text-3xl">
               Gusta la tradizione autentica con il nostro servizio di asporto. <br />
