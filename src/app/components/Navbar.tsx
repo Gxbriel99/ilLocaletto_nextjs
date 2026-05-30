@@ -12,8 +12,9 @@ const NAV_LINKS = [
 ] as const;
 
 const SOCIAL = [
-  { href: info.instagram, label: "Instagram" },
-  { href: info.facebook, label: "Facebook" },
+  { href: info.instagram, label: "Instagram", icon: "fa-instagram" },
+  { href: info.facebook, label: "Facebook", icon: "fa-facebook" },
+  { href: info.tripadvisor, label: "Tripadvisor", icon: "fa-tripadvisor" },
 ] as const;
 
 function HamburgerIcon({ open }: { open: boolean }) {
@@ -58,14 +59,18 @@ function MobileMenu({ menuId, onClose }: { menuId: string; onClose: () => void }
           <Phone className="h-5 w-5" />
           Prenota ora
         </Link>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-[#BE9859]/35 pt-6 text-xs font-semibold uppercase tracking-wide text-[#BE9859]/90">
-          {SOCIAL.map(({ href, label }, i) => (
-            <span key={href} className="contents">
-              {i > 0 ? <span className="select-none text-[#BE9859]/40" aria-hidden>·</span> : null}
-              <Link href={href} target="_blank" rel="noopener noreferrer" className="hover:text-[#BE9859]">
-                {label}
-              </Link>
-            </span>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[#BE9859]/35 pt-6 text-[#BE9859]/90">
+          {SOCIAL.map(({ href, label, icon }) => (
+            <Link
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-2xl transition-colors hover:text-[#BE9859]"
+            >
+              <i className={`fa ${icon}`} aria-hidden />
+            </Link>
           ))}
         </div>
       </nav>

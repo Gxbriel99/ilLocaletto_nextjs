@@ -33,7 +33,7 @@ export default function About() {
     >
       <div className="pointer-events-none absolute inset-x-0 -top-20 z-[1] h-[calc(100%+5rem)] w-full overflow-hidden md:-top-15 md:h-[calc(100%+4rem)]">
         <Image
-          src="/about_bg.webp"
+          src="/test.png"
           alt=""
           fill
           priority

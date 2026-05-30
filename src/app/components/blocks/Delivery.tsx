@@ -30,6 +30,9 @@ export default function Delivery() {
               Gusta la tradizione autentica con il nostro servizio di asporto. <br />
               Ordina ritira ora!
             </p>
+            <p className="text-base font-semibold text-shadow-[1px_1px_4px_rgba(0,0,0,0.45)] sm:text-lg md:text-xl lg:text-2xl">
+              Asporto disponibile: {info.takeawayHours}
+            </p>
           </div>
 
           <div className="flex w-full max-w-xl flex-col items-stretch gap-5 sm:flex-row sm:justify-center sm:gap-8">

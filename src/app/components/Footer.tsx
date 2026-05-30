@@ -31,25 +31,33 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/75 lg:mt-6 lg:text-base">
               {info.tagline}
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-wide text-[#BE9859]/90 md:justify-start">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-2xl text-[#BE9859]/90 md:justify-start">
               <Link
                 href={info.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="transition-colors hover:text-[#EFE9D1]"
               >
-                Instagram
+                <i className="fa fa-instagram" aria-hidden />
               </Link>
-              <span className="select-none text-[#BE9859]/40" aria-hidden>
-                ·
-              </span>
               <Link
                 href={info.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="transition-colors hover:text-[#EFE9D1]"
               >
-                Facebook
+                <i className="fa fa-facebook" aria-hidden />
+              </Link>
+              <Link
+                href={info.tripadvisor}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tripadvisor"
+                className="transition-colors hover:text-[#EFE9D1]"
+              >
+                <i className="fa fa-tripadvisor" aria-hidden />
               </Link>
             </div>
           </div>
@@ -103,7 +111,15 @@ export default function Footer() {
             <ul className="mx-auto max-w-xs space-y-2.5 text-sm text-white/80 md:mx-0 md:max-w-none">
               <li className="flex items-baseline justify-between gap-6 border-b border-white/5 pb-2.5">
                 <span className="font-medium text-white/90">{info.openingDays}</span>
-                <span className="shrink-0 text-white/70">{info.openingHours}</span>
+                <span className="shrink-0 text-right text-white/70">
+                  {info.openingHoursMorning}
+                  <br />
+                  {info.openingHoursAfternoon}
+                </span>
+              </li>
+              <li className="flex items-baseline justify-between gap-6 border-b border-white/5 pb-2.5">
+                <span className="font-medium text-white/90">Asporto</span>
+                <span className="shrink-0 text-white/70">{info.takeawayHours}</span>
               </li>
               <li className="flex items-baseline justify-between gap-6">
                 <span className="font-medium text-white/90">{info.restDay}</span>
