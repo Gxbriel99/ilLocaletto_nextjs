@@ -8,9 +8,9 @@ export const info = {
   piva: "02022380568",
   tagline:
     "Pizza alla pala a lunga lievitazione a Sutri. Ingredienti selezionati, gusto autentico e accoglienza genuina.",
-  openingDays: "Martedì – Domenica",
+  openingDays: "Lunedì – Domenica",
   openingHoursMorning: "10:00 – 12:00",
-  openingHoursAfternoon: "17:00 – 22:00",
+  openingHoursAfternoon: "20:00 – 22:30",
   takeawayHours: "19:00 – 20:30",
   restDay: "Mercoledì",
   design: "Gabriel Perini",
