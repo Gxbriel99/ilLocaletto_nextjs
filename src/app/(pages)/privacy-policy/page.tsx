@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PrivacyPolicy() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -189,6 +191,15 @@ export default function PrivacyPolicy() {
       <p className="mt-10 text-sm text-[#727575]">
         Ultimo aggiornamento: 26/05/2026
       </p>
+
+      <div className="mt-12">
+        <Link
+          href="/"
+          className="inline-flex items-center justify-center rounded border-2 border-[#801917] bg-[#801917] px-6 py-3 text-base font-bold text-[#EFE9D1] shadow transition-colors hover:border-[#BE9859] hover:bg-[#BE9859]"
+        >
+          Torna alla home
+        </Link>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Il nostro Menu", href: "/menu" },
   { label: "Galleria", href: "/galleria" },
   { label: "Chi siamo", href: "/#chi-siamo" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ] as const;
 
 export default function Footer() {
@@ -112,9 +113,7 @@ export default function Footer() {
               <li className="flex items-baseline justify-between gap-6 border-b border-white/5 pb-2.5">
                 <span className="font-medium text-white/90">{info.openingDays}</span>
                 <span className="shrink-0 text-right text-white/70">
-                  {info.openingHoursMorning}
-                  <br />
-                  {info.openingHoursAfternoon}
+                  {info.openingHoursMorning} · {info.openingHoursAfternoon}
                 </span>
               </li>
               <li className="flex items-baseline justify-between gap-6 border-b border-white/5 pb-2.5">
@@ -138,6 +137,15 @@ export default function Footer() {
             diritti riservati.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:gap-x-6">
+            <Link
+              href="/privacy-policy"
+              className="font-medium text-[#BE9859] transition-colors hover:text-[#EFE9D1]"
+            >
+              Privacy Policy
+            </Link>
+            <span className="select-none text-white/25" aria-hidden>
+              ·
+            </span>
             <span>
               Design by{" "}
               <Link
