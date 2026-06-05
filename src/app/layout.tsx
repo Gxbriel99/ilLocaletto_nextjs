@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import MainLayout from "./components/layouts/MainLayout";
+import WhatsAppButton from "./components/WhatsAppButton";
 import "font-awesome/css/font-awesome.min.css";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="it" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <MainLayout>{children}</MainLayout>
+        <WhatsAppButton />
       </body>
     </html>
   );

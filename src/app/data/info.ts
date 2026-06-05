@@ -1,7 +1,7 @@
 export const info = {
   businessName: "Il Localetto Sutri",
   phone: "0761 608879 ",
-  whatsappPhone: "0000000000",
+  whatsappPhone: "+393334758540",
   email: "example@example.com",
   address: "Via IV Novembre, 01030 – Sutri",
   ownerName: "Luca Cordiali",

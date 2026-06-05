@@ -1,10 +1,10 @@
 import { info } from "../data/info";
 
-export function sendOnWhatsapp(text: string): string {
+export function sendOnWhatsapp(text?: string): string {
 
     const phoneNumber = info.whatsappPhone;
 
-    const formattedText = text
+    const formattedText = text ? text : ""
         .replace(/\n/g, "%0A") // Nuove righe
         .replace(/\s+/g, " ") // Spazi multipli a singolo
         .trim() // Rimuove spazi all'inizio/fine

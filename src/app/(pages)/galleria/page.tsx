@@ -50,7 +50,7 @@ export default function GalleriaPage() {
                   src={item.path}
                   alt={item.title}
                   fill
-                  priority={index === 0}
+                  priority={index <7}
                   sizes="(min-width: 1024px) 66vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition duration-700 ease-out group-hover:scale-105"
                 />
