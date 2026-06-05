@@ -3,7 +3,7 @@ export const info = {
   phone: "0761 608879 ",
   whatsappPhone: "+393334758540",
   email: "example@example.com",
-  address: "Via IV Novembre, 01030 – Sutri",
+  address: "Via Vittorio Veneto 35, 01015 – Sutri",
   ownerName: "Luca Cordiali",
   piva: "02022380568",
   tagline:

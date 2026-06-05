@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description: "Il Localetto Sutri",
 };
 
+function isWhatsAppVisible(): boolean {
+  const hour = new Date().getHours();
+  return hour >= 17 && hour <= 22;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +34,7 @@ export default function RootLayout({
     <html lang="it" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <MainLayout>{children}</MainLayout>
-        <WhatsAppButton />
+        {isWhatsAppVisible() && <WhatsAppButton />}
       </body>
     </html>
   );

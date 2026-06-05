@@ -1,10 +1,13 @@
 import { info } from "../data/info";
+import { getSalutoByHour } from "../data/service";
 
 export function sendOnWhatsapp(text?: string): string {
 
     const phoneNumber = info.whatsappPhone;
 
-    const formattedText = text ? text : ""
+    const defaultText = `${getSalutoByHour()}, vorrei fare un ordinazione.`;
+
+    const formattedText = defaultText
         .replace(/\n/g, "%0A") // Nuove righe
         .replace(/\s+/g, " ") // Spazi multipli a singolo
         .trim() // Rimuove spazi all'inizio/fine
