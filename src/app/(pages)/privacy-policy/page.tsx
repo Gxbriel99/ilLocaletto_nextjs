@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { info } from "../../data/info";
+
+const { businessName, ownerName, piva, phone, whatsappPhone, email, address } = info;
+
 
 export default function PrivacyPolicy() {
   return (
@@ -16,13 +20,14 @@ export default function PrivacyPolicy() {
 
       <p className="mb-4 text-[#232325]">
         Titolare del trattamento: <strong>IL LOCALETTO S.N.C</strong> (di{" "}
-        <strong>Luca Cordiali</strong>) &middot; <strong>P.IVA</strong>{" "}
-        <span className="font-mono">02022380568</span>. Recapiti:{" "}
-        <strong>email</strong> <span className="font-mono">example@example.com</span>{" "}
+        <strong>{ownerName}</strong>) &middot; <strong>P.IVA</strong>{" "}
+        <span className="font-mono">{piva}</span>. Recapiti:{" "}
+        <strong>email</strong> <span className="font-mono">{email}</span>{" "}
         &middot; <strong>telefono</strong>{" "}
-        <span className="font-mono">0761 608879</span>{" "}
+        <span className="font-mono">{phone}</span>{" "}
+        &middot; <strong>Cellulare</strong> <span className="font-mono">{whatsappPhone}</span>{" "}
         &middot; <strong>sede</strong>{" "}
-        <span className="font-mono">Via IV Novembre, 01030 – Sutri</span>.
+        <span className="font-mono">{address}</span>.
       </p>
 
       <p className="mb-4 text-[#232325]">
@@ -184,7 +189,7 @@ export default function PrivacyPolicy() {
         Contatti
       </h2>
       <p className="mb-4 text-[#232325]">
-        Le richieste vanno rivolte a <strong>IL LOCALETTO S.N.C</strong> con tutti
+        Le richieste vanno rivolte a <strong>{businessName}</strong> con tutti
         i dati di contatto (telefono ed email).
       </p>
 
