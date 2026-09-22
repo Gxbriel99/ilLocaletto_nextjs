@@ -23,20 +23,19 @@ export const Antipasti: MenuItem[] = [
         price: 4.0,
         image: "#",
     },
-    /*
+    
     {
       name: "Tris di crostini",
       description: "Mozzarella e alici / funghi porcini / prosciutto crudo",
       price: 6.0,
-      image: "/menu/crostini.jpg",
+      image: "#",
     },
     {
       name: "Fritti misti*",
       description: "2 supplì, 2 crocchette, 2 olive ascolane",
       price: 5.0,
-      image: "/menu/frittimisti.jpg",
+      image: "#",
     },
-    */
     {
         name: "Fiore di zucca fritto *",
         description: "Croccante e leggero, fritto al momento.",
@@ -67,7 +66,6 @@ export const Antipasti: MenuItem[] = [
         price: 16.0,
         image: "#",
     },
-    /*
     {
       name: "Zuppa di lenticchie",
       description: "(autunno/inverno)",
@@ -80,7 +78,6 @@ export const Antipasti: MenuItem[] = [
       price: 9.0,
       image: "/menu/zuppa-ceci.jpg",
     },
-    */
     {
         name: "1 Supplì",
         description: "Classico supplì, croccante fuori e filante dentro.",
@@ -99,20 +96,19 @@ export const Antipasti: MenuItem[] = [
         price: 0.7,
         image: "#",
     },
-    /*
+    
     {
       name: "Antipasto del Localetto",
       description: "1 tagliere misto salumi e formaggi, 1 mix di fritti*, 1 tris di bruschette",
       price: 20.0,
-      image: "/menu/antipasto-localetto.jpg",
+      image: "#",
     },
     {
       name: "Antipasto “Small\"",
       description: "Selezione di salumi, formaggi e mix di fritti*",
       price: 12.0,
-      image: "/menu/antipasto-small.jpg",
+      image: "#",
     },
-    */
     {
         name: "Coccetto di Focaccia “extra”",
         description: "Focaccia calda, perfetta da condividere.",
@@ -127,7 +123,7 @@ export const Antipasti: MenuItem[] = [
     },
 ];
 
-/* export const SecondiPiatti: MenuItem[] = [
+ export const SecondiPiatti: MenuItem[] = [
     { name: "Tagliata di Manzo", price: 16.00 },
     { name: "Tagliata con rucola e scaglie di parmigiano", price: 18.00 },
     { name: "Tagliata con radicchio e glassa di aceto balsamico", price: 18.00 },
@@ -148,7 +144,7 @@ export const Antipasti: MenuItem[] = [
       description: "Grigliata mista di tagliata, arrosticini e salsicce + patatine fritte",
       price: 34.00
     }
-]; */
+]; 
 
 export const gustiSemplici: MenuItem[] = withImage([
     { name: "Margherita", description: "mozzarella, pomodoro", price: 6.00 },
