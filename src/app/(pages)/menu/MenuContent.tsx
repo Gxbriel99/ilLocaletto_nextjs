@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {
   Antipasti,
+  SecondiPiatti,
   bevandeAlcoliche,
   bevandeAnalcoliche,
   dolci,
@@ -79,6 +80,16 @@ const menuSections: MenuSection[] = [
     fallbackImage: "/menu_bg.webp",
     items: gustiEstivi,
     pricing: ["Mozz. senza lattosio € 1,00"],
+    kind: "items",
+  },
+  {
+    id: "secondi",
+    label: "Secondi piatti",
+    shortLabel: "Secondi",
+    description:
+      "Dalla griglia: tagliata, arrosticini, salsicce e hamburger con contorno.",
+    fallbackImage: "/menu_bg.webp",
+    items: SecondiPiatti,
     kind: "items",
   },
   {

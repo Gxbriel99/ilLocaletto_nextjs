@@ -412,6 +412,16 @@ export const menuSections: MenuSection[] = [
         kind: "items",
     },
     {
+        id: "secondi",
+        label: "Secondi piatti",
+        shortLabel: "Secondi",
+        description:
+            "Dalla griglia: tagliata, arrosticini, salsicce e hamburger con contorno.",
+        fallbackImage: "/menu_bg.webp",
+        items: SecondiPiatti,
+        kind: "items",
+    },
+    {
         id: "vini",
         label: "Vini",
         shortLabel: "Vini",
