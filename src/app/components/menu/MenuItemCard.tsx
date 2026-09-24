@@ -55,10 +55,10 @@ export default function MenuItemCard({
               {item.options!.map((opt) => (
                 <li
                   key={`${item.name}-${opt.quantity}`}
-                  className="flex justify-between gap-3 text-sm text-[#5D4037] sm:block sm:text-base"
+                  className="flex items-center justify-between gap-3 text-sm text-[#5D4037] sm:text-base"
                 >
                   <span>{opt.quantity}</span>
-                  <span className="font-bold text-[#801917] sm:hidden">
+                  <span className="text-base font-bold whitespace-nowrap text-[#801917] sm:text-lg md:text-xl">
                     {format(opt.price)}
                   </span>
                 </li>
@@ -67,22 +67,13 @@ export default function MenuItemCard({
           ) : null}
         </div>
 
-        <div className="hidden flex-col items-end justify-center gap-1 pl-2 sm:flex">
-          {hasOptions ? (
-            item.options!.map((opt) => (
-              <span
-                key={`${item.name}-${opt.quantity}-price`}
-                className="text-lg font-bold whitespace-nowrap text-[#801917] md:text-xl"
-              >
-                {format(opt.price)}
-              </span>
-            ))
-          ) : item.price != null ? (
+        {!hasOptions && item.price != null ? (
+          <div className="hidden flex-col items-end justify-center gap-1 pl-2 sm:flex">
             <span className="text-xl font-bold whitespace-nowrap text-[#801917] sm:text-2xl">
               {format(item.price)}
             </span>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
       </div>
     </article>
   );

@@ -123,7 +123,7 @@ export const Antipasti: MenuItem[] = [
     },
 ];
 
- export const SecondiPiatti: MenuItem[] = [
+export const SecondiPiatti: MenuItem[] = [
     { name: "Tagliata di Manzo", price: 16.00 },
     { name: "Tagliata con rucola e scaglie di parmigiano", price: 18.00 },
     { name: "Tagliata con radicchio e glassa di aceto balsamico", price: 18.00 },
@@ -144,7 +144,7 @@ export const Antipasti: MenuItem[] = [
       description: "Grigliata mista di tagliata, arrosticini e salsicce + patatine fritte",
       price: 34.00
     }
-]; 
+];
 
 export const gustiSemplici: MenuItem[] = withImage([
     { name: "Margherita", description: "mozzarella, pomodoro", price: 6.00 },
