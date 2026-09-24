@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
   Antipasti,
   SecondiPiatti,
+  contorni,
   bevandeAlcoliche,
   bevandeAnalcoliche,
   dolci,
@@ -90,6 +91,16 @@ const menuSections: MenuSection[] = [
       "Dalla griglia: tagliata, arrosticini, salsicce e hamburger con contorno.",
     fallbackImage: "/menu_bg.webp",
     items: SecondiPiatti,
+    kind: "items",
+  },
+  {
+    id: "contorni",
+    label: "Contorni",
+    shortLabel: "Contorni",
+    description:
+      "Cicoria, verdure di stagione, insalata e patatine fritte.",
+    fallbackImage: "/menu_bg.webp",
+    items: contorni,
     kind: "items",
   },
   {

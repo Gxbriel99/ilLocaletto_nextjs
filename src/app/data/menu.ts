@@ -99,13 +99,13 @@ export const Antipasti: MenuItem[] = [
     
     {
       name: "Antipasto del Localetto",
-      description: "1 tagliere misto salumi e formaggi, 1 mix di fritti*, 1 tris di bruschette",
+      description: "1 tagliere misto salumi e formaggi, 1 mix di mini fritti*, 1 tris di bruschette",
       price: 20.0,
       image: "#",
     },
     {
       name: "Antipasto “Small\"",
-      description: "Selezione di salumi, formaggi e mix di fritti*",
+      description: "Selezione di salumi, formaggi e mix di mini fritti*",
       price: 12.0,
       image: "#",
     },
@@ -419,6 +419,16 @@ export const menuSections: MenuSection[] = [
             "Dalla griglia: tagliata, arrosticini, salsicce e hamburger con contorno.",
         fallbackImage: "/menu_bg.webp",
         items: SecondiPiatti,
+        kind: "items",
+    },
+    {
+        id: "contorni",
+        label: "Contorni",
+        shortLabel: "Contorni",
+        description:
+            "Cicoria, verdure di stagione, insalata e patatine fritte.",
+        fallbackImage: "/menu_bg.webp",
+        items: contorni,
         kind: "items",
     },
     {
