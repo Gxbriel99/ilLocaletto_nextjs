@@ -354,16 +354,6 @@ export const menuSections: MenuSection[] = [
             "Small € 6,00",
             "Mozz. senza lattosio € 1,00",
         ],
-        notice: {
-            title: "Pizza alla pala al metro",
-            body: [
-                "Il prezzo totale varia a seconda dei gusti: sommate il prezzo dei singoli gusti scelti.",
-                "1 metro – 4 gusti – consigliato per 4 persone",
-                "¾ di metro – 3 gusti – consigliato per 3 persone",
-                "½ metro – 2 gusti – consigliato per 2 persone",
-                "Small – 1 gusto – consigliata per 1 persona",
-            ],
-        },
         kind: "items",
     },
     {
@@ -373,12 +363,7 @@ export const menuSections: MenuSection[] = [
         description: PIZZA_DESCRIPTION,
         fallbackImage: "/menu_bg.webp",
         items: gustiRicchi,
-        pricing: [
-            "1 metro € 30,00",
-            "½ metro € 15,00",
-            "Small € 7,50",
-            "Mozz. senza lattosio € 1,00",
-        ],
+        pricing: ["Mozz. senza lattosio € 1,00"],
         kind: "items",
     },
     {
@@ -403,14 +388,30 @@ export const menuSections: MenuSection[] = [
         description: PIZZA_DESCRIPTION,
         fallbackImage: "/menu_bg.webp",
         items: gustiEstivi,
-        pricing: [
-            "1 metro € 30,00",
-            "½ metro € 15,00",
-            "Small € 7,50",
-            "Mozz. senza lattosio € 1,00",
-        ],
+        pricing: ["Mozz. senza lattosio € 1,00"],
         kind: "items",
     },
+    {
+        id: "autunnali",
+        label: "Gusti autunnali",
+        shortLabel: "Autunnali",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiInvernaliSpeciali,
+        pricing: ["Mozz. senza lattosio € 1,00"],
+        kind: "items",
+    },
+    {
+        id: "invernali",
+        label: "Gusti invernali",
+        shortLabel: "Invernali",
+        description: PIZZA_DESCRIPTION,
+        fallbackImage: "/menu_bg.webp",
+        items: gustiInvernaliRicchi,
+        pricing: ["Mozz. senza lattosio € 1,00"],
+        kind: "items",
+    },
+   
     {
         id: "secondi",
         label: "Secondi piatti",
@@ -466,14 +467,5 @@ export const menuSections: MenuSection[] = [
         fallbackImage: "/menu_bg.webp",
         items: dolci,
         kind: "items",
-    },
-    {
-        id: "info",
-        label: "Info",
-        shortLabel: "Info",
-        description:
-            "Servizi, note sui prodotti surgelati e informazioni sui prezzi indicativi.",
-        fallbackImage: "/menu_bg.webp",
-        kind: "info",
     },
 ];

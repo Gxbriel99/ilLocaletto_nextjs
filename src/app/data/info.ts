@@ -14,7 +14,7 @@ export const info = {
   takeawayHours: "19:00 – 20:30",
   restDay: "Mercoledì",
   design: "Gabriel Perini",
-  designLink: "https://perinicodes.vercel.app/",
+  designLink: "https://www.perinigabriel.com/",
   instagram: "https://www.instagram.com/illocaletto?igsh=MTNha2RqOGo4NTR2cQ%3D%3D",
   facebook:
     "https://www.facebook.com/localetto?rdid=4zEGKRoid28q0Z6S&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19J8b9awyb%2F",

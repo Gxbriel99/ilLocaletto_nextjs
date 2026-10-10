@@ -2,144 +2,11 @@
 
 import { useState } from "react";
 import {
-  Antipasti,
-  SecondiPiatti,
-  contorni,
-  bevandeAlcoliche,
-  bevandeAnalcoliche,
-  dolci,
-  gustiEstivi,
-  gustiRicchi,
-  gustiSemplici,
-  gustiSpeciali,
+  menuSections,
   type MenuItem,
   type MenuSection,
-  viniBianchi,
-  viniRossi,
 } from "../../data/menu";
 import MenuItemCard from "../../components/menu/MenuItemCard";
-
-const PIZZA_DESCRIPTION =
-  "Le nostre pizze alla pala: impasto a lunga lievitazione, croccante fuori e morbido dentro. Scegli il tuo gusto e lasciati conquistare dal profumo appena sfornato.";
-
-const menuSections: MenuSection[] = [
-  {
-    id: "antipasti",
-    label: "Antipasti",
-    shortLabel: "Antipasti",
-    description:
-      "Per iniziare con gusto: bruschette, fritti e taglieri di salumi e formaggi locali.",
-    fallbackImage: "/menu_bg.webp",
-    items: Antipasti,
-    kind: "items",
-  },
-  {
-    id: "semplici",
-    label: "Gusti semplici",
-    shortLabel: "Semplici",
-    description: PIZZA_DESCRIPTION,
-    fallbackImage: "/menu_bg.webp",
-    items: gustiSemplici,
-    pricing: [
-      "1 metro € 24,00",
-      "½ metro € 12,00",
-      "Small € 6,00",
-      "Mozz. senza lattosio € 1,00",
-    ],
-    kind: "items",
-  },
-  {
-    id: "ricchi",
-    label: "Gusti ricchi",
-    shortLabel: "Ricchi",
-    description: PIZZA_DESCRIPTION,
-    fallbackImage: "/menu_bg.webp",
-    items: gustiRicchi,
-    pricing: ["Mozz. senza lattosio € 1,00"],
-    kind: "items",
-  },
-  {
-    id: "speciali",
-    label: "Gusti speciali",
-    shortLabel: "Speciali",
-    description: PIZZA_DESCRIPTION,
-    fallbackImage: "/menu_bg.webp",
-    items: gustiSpeciali,
-    pricing: [
-      "1 metro € 36,00",
-      "½ metro € 18,00",
-      "Small € 9,00",
-      "Mozz. senza lattosio € 1,00",
-    ],
-    kind: "items",
-  },
-  {
-    id: "estivi",
-    label: "Gusti estivi",
-    shortLabel: "Estivi",
-    description: PIZZA_DESCRIPTION,
-    fallbackImage: "/menu_bg.webp",
-    items: gustiEstivi,
-    pricing: ["Mozz. senza lattosio € 1,00"],
-    kind: "items",
-  },
-  {
-    id: "secondi",
-    label: "Secondi piatti",
-    shortLabel: "Secondi",
-    description:
-      "Dalla griglia: tagliata, arrosticini, salsicce e hamburger con contorno.",
-    fallbackImage: "/menu_bg.webp",
-    items: SecondiPiatti,
-    kind: "items",
-  },
-  {
-    id: "contorni",
-    label: "Contorni",
-    shortLabel: "Contorni",
-    description:
-      "Cicoria, verdure di stagione, insalata e patatine fritte.",
-    fallbackImage: "/menu_bg.webp",
-    items: contorni,
-    kind: "items",
-  },
-  {
-    id: "vini",
-    label: "Vini",
-    shortLabel: "Vini",
-    description:
-      "Rossi e bianchi selezionati, dalla bottiglia al calice per accompagnare ogni piatto.",
-    fallbackImage: "/menu_bg.webp",
-    groups: [
-      { title: "Vini rossi", items: viniRossi },
-      { title: "Vini bianchi", items: viniBianchi },
-    ],
-    kind: "groups",
-  },
-  {
-    id: "bevande",
-    label: "Bevande",
-    shortLabel: "Bevande",
-    description:
-      "Tra un morso e un sorso: analcoliche fresche e birra alla spina.",
-    fallbackImage: "/menu_bg.webp",
-    groups: [
-      { title: "Bevande analcoliche", items: bevandeAnalcoliche },
-      { title: "Bevande alcoliche", items: bevandeAlcoliche },
-    ],
-    kind: "groups",
-  },
-  {
-    id: "dolci",
-    label: "Dolci",
-    shortLabel: "Dolci",
-    description:
-      "Per finire in dolcezza: semifreddi, tiramisù e specialità della casa.",
-    fallbackImage: "/menu_bg.webp",
-    items: dolci,
-    kind: "items",
-  },
-];
 
 function ItemsList({
   items,
@@ -192,7 +59,7 @@ function InfoBlock() {
   );
 }
 
-const PIZZA_SECTION_IDS = new Set(["semplici", "ricchi", "speciali", "estivi"]);
+const PIZZA_SECTION_IDS = new Set(["semplici", "ricchi", "speciali", "estivi", "autunnali", "invernali"]);
 
 function isMozzarellaSupplement(line: string) {
   return /mozz|lattosio/i.test(line);
