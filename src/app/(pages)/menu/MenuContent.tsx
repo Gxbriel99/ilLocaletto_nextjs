@@ -59,7 +59,7 @@ function InfoBlock() {
   );
 }
 
-const PIZZA_SECTION_IDS = new Set(["semplici", "ricchi", "speciali", "estivi", "autunnali", "invernali"]);
+const PIZZA_SECTION_IDS = new Set(["semplici", "ricchi", "speciali", "estivi", "invernali"]);
 
 function isMozzarellaSupplement(line: string) {
   return /mozz|lattosio/i.test(line);

@@ -208,14 +208,6 @@ export const gustiAutunnoInverno: MenuItem[] = withImage([
     { name: "Localetto Special", description: "mozzarella, quattro formaggi, salsiccia, salame piccante", price: 9.00 },
 ]);
 
-export const gustiInvernaliRicchi = gustiAutunnoInverno.filter(item =>
-    ["Amatriciana", "Patate e Lardo", "Marinara e Speck"].includes(item.name)
-);
-
-export const gustiInvernaliSpeciali = gustiAutunnoInverno.filter(item =>
-    !["Amatriciana", "Patate e Lardo", "Marinara e Speck"].includes(item.name)
-);
-
 export const gustiEstivi: MenuItem[] = withImage([
     { name: "Zucchine special", description: "mozzarella, zucchine, fiori di zucca, scamorza", price: 9.00 },
     { name: "Salsa Rosa", description: "pomodoro, maionese, salmone, rucola, gamberetti", price: 9.00 },
@@ -392,22 +384,12 @@ export const menuSections: MenuSection[] = [
         kind: "items",
     },
     {
-        id: "autunnali",
-        label: "Gusti autunnali",
-        shortLabel: "Autunnali",
-        description: PIZZA_DESCRIPTION,
-        fallbackImage: "/menu_bg.webp",
-        items: gustiInvernaliSpeciali,
-        pricing: ["Mozz. senza lattosio € 1,00"],
-        kind: "items",
-    },
-    {
         id: "invernali",
         label: "Gusti invernali",
         shortLabel: "Invernali",
         description: PIZZA_DESCRIPTION,
         fallbackImage: "/menu_bg.webp",
-        items: gustiInvernaliRicchi,
+        items: gustiAutunnoInverno,
         pricing: ["Mozz. senza lattosio € 1,00"],
         kind: "items",
     },
